@@ -33,7 +33,6 @@ public class ForgotPasswordTest {
     String emailForForgotPassword = "ddubtsov@smedialink.com";
 
 
-
     @Before
     public void before() throws MalformedURLException, InterruptedException {
         switch (GlobalMethods.chooseDevice()){
