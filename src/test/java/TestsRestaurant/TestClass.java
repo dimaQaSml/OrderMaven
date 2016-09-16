@@ -18,7 +18,7 @@ public class TestClass {
 
     @Test
     public void test(){
-        Assert.assertTrue(6>2);
+        Assert.assertTrue(7>2);
     }
 
 }
