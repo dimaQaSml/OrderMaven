@@ -128,7 +128,7 @@ public class GlobalMethods {
         int result=0;
         Scanner sc = null;
         try {
-            sc = new Scanner(new File("/Users/dmitry/IdeaProjects/OrderAppAppium/emailIdCount2.txt"));
+            sc = new Scanner(new File("/Users/dmitry/IdeaProjects/OrderMaven/emailIdCount2.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
