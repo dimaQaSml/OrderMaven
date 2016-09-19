@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  * Created by dmitry on 03.06.16.
  */
-public class MainScreenSidebarAddAddressClass {
+public class  MainScreenSidebarAddAddressClass {
 
     WebDriver driver;
     WebDriverWait waiting;
