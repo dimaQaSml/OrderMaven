@@ -2,7 +2,7 @@ package Client.MainScreenSidebarAddClass;
 
 import Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
 import GlobalMethods.GlobalMethods;
-import TestsClient.MainScreenSidebarTest.MainScreenSidebarAddressTest;
+//import TestsClient.MainScreenSidebarTest.MainScreenSidebarAddressTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

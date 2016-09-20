@@ -1,7 +1,8 @@
 package Restaurant.SignUpClass;
 
 import GlobalMethods.GlobalMethods;
-import org.junit.Assert;
+//TODO
+//import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -162,7 +163,8 @@ public class SignUpStep3Class {
             getSignUpButton().click();
 
         } catch (org.openqa.selenium.TimeoutException e){
-            Assert.fail("Error!");
+            //TODO
+            //Assert.fail("Error!");
         }
     }
 

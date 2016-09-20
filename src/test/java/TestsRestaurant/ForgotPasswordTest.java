@@ -16,6 +16,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.runner.notification.Failure;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -31,6 +37,18 @@ public class ForgotPasswordTest {
     ForgotPasswordClass forgotPasswordClass;
     SignInClass signInClass;
     String emailForForgotPassword = "ddubtsov@smedialink.com";
+
+    public static void main(String[] args) throws ClassNotFoundException {
+        Result result = JUnitCore.runClasses(ForgotPasswordTest.class);
+        System.out.println("Total count of tests - " + "\"" + result.getRunCount() + "\"");
+        System.out.println("Total count of tests failed - " + "\"" + result.getFailureCount() + "\"");
+
+        for (Failure failure : result.getFailures()) {
+            System.out.println("Failed tests message - " + "\"" + failure.getMessage() + "\"");
+            System.out.println();
+        }
+        System.out.println("Result - " + "\"" + result.wasSuccessful() + "\"");
+    }
 
 
     @Before

@@ -1,12 +1,7 @@
 package Client.Restaurant;
 
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddQuickOrderClass;
-import Client.MainScreenSidebarClass.MainScreenClass;
 import GlobalMethods.GlobalMethods;
-import Restaurant.MainScreenMyRestaurant;
-import Restaurant.SignInClass;
-import Restaurant.SignUpClass.*;
-import TestsRestaurant.SignUpAllSteps;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -207,7 +202,8 @@ public class RestaurantScreenClass {
         signUpStep5Class.signUpClick();
         driver.close();*/
 
-        SignInClass signInClassRestaurant = PageFactory.initElements(driver, SignInClass.class);
+        //TODO
+       /* SignInClass signInClassRestaurant = PageFactory.initElements(driver, SignInClass.class);
         Client.SignInClass signInClassClient = PageFactory.initElements(driver, Client.SignInClass.class);
         MainScreenClass mainScreenClass = PageFactory.initElements(driver, MainScreenClass.class);
         RestaurantScreenClass restaurantScreenClass = PageFactory.initElements(driver, RestaurantScreenClass.class);
@@ -234,11 +230,13 @@ public class RestaurantScreenClass {
             return false;
         if(!restaurantModalClass.getRestaurantMenuPhotosArea().isDisplayed())
             return false;
-        return true;
+        return true;*/
+        return false;
     }
 
     public boolean testCase105() throws InterruptedException {
-        SignInClass signInClassRestaurant = PageFactory.initElements(driver, SignInClass.class);
+        //TODO
+       /* SignInClass signInClassRestaurant = PageFactory.initElements(driver, SignInClass.class);
         MainScreenMyRestaurant mainScreenMyRestaurant = PageFactory.initElements(driver, MainScreenMyRestaurant.class);
         Client.SignInClass signInClassClient = PageFactory.initElements(driver, Client.SignInClass.class);
         MainScreenClass mainScreenClass = PageFactory.initElements(driver, MainScreenClass.class);
@@ -278,7 +276,8 @@ public class RestaurantScreenClass {
             return false;
         if(!restaurantModalClass.getRestaurantMenuPhotosArea().isDisplayed())
             return false;
-        return true;
+        return true;*/
+        return false;
     }
 
     public boolean testCase112() throws InterruptedException {
