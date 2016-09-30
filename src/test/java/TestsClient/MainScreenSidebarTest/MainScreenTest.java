@@ -65,11 +65,10 @@ public class MainScreenTest {
             mainScreenSidebarAddressClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddressClass.class);
             mainScreenSidebarPaymentsClass = PageFactory.initElements(driverBrowser, MainScreenSidebarPaymentsClass.class);
             mainScreenSidebarAddQuickOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddQuickOrderClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
 
-
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
         signInClass.chooseDevice();
         signInClass.signInClick("+79280373736","123456");
         mainScreenClass.chooseDevice();

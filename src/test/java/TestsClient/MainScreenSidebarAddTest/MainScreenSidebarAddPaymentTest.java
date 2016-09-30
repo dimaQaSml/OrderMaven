@@ -58,11 +58,10 @@ public class MainScreenSidebarAddPaymentTest {
             mainScreenSidebarPaymentsClass = PageFactory.initElements(driverBrowser, MainScreenSidebarPaymentsClass.class);
             mainScreenSidebarAddPaymentsClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddPaymentsClass.class);
             mainScreenClass = PageFactory.initElements(driverBrowser, MainScreenClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
 
-
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
         signInClass.chooseDevice();
         signInClass.signInClick("+79280373736","123456");
         mainScreenClass.chooseDevice();

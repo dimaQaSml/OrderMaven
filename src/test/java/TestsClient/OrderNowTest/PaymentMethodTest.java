@@ -68,11 +68,10 @@ public class PaymentMethodTest {
             chooseCreditCardClass = PageFactory.initElements(driverBrowser, ChooseCreditCardClass.class);
             summarySendClass = PageFactory.initElements(driverBrowser, SummarySendClass.class);
             addAddressClass = PageFactory.initElements(driverBrowser, AddAddressClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
 
-
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
         signInClass.chooseDevice();
         signInClass.signInClick(GlobalMethods.getPhone(), GlobalMethods.getPassword());
         mainScreenClass.chooseDevice();

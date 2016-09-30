@@ -62,11 +62,12 @@ public class ForgotPasswordTest {
             forgotPasswordClass = PageFactory.initElements(driverBrowser,ForgotPasswordClass.class);
             verificationCodeClass = PageFactory.initElements(driverBrowser,VerificationCodeClass.class);
             signUpClass = PageFactory.initElements(driverBrowser,SignUpClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
 
 
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
+
         signInClass.chooseDevice();
         signInClass.forgotPasswordClick();
         forgotPasswordClass.chooseDevice();

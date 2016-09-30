@@ -66,10 +66,11 @@ public class MainScreenSidebarFavoriteOrderTest {
             mainScreenSidebarAddQuickOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddQuickOrderClass.class);
             mainScreenSidebarAddOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddOrderClass.class);
             mainScreenSidebarFavoriteOrderDeleteClass = PageFactory.initElements(driverBrowser, MainScreenSidebarFavoriteOrderDeleteClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
+
         before = new ArrayList<>();
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
         signInClass.chooseDevice();
         signInClass.signInClick("+79280373736","123456");
         mainScreenSidebarFavoriteOrderClass.chooseDevice();

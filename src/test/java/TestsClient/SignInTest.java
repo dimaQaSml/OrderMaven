@@ -57,12 +57,13 @@ public class SignInTest {
         } else {
             signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);
             forgotPasswordClass = PageFactory.initElements(driverBrowser,ForgotPasswordClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
 
 
         signUpClass = PageFactory.initElements(driver,SignUpClass.class);
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
+
         signInClass.chooseDevice();
     }
 

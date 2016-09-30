@@ -72,11 +72,12 @@ public class SignUpTest {
             verificationCodeClass = PageFactory.initElements(driverBrowser,VerificationCodeClass.class);
             wait = new WebDriverWait(driverBrowser,15);
             signUpClass = PageFactory.initElements(driverBrowser,SignUpClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
 
 
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
+
         signInClass.chooseDevice();
         signInClass.getSignUpButton().click();
         signUpClass.chooseDevice();

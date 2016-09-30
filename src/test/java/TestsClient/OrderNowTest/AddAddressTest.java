@@ -65,11 +65,10 @@ public class AddAddressTest{
             restaurantModalClass = PageFactory.initElements(driverBrowser, RestaurantModalClass.class);
             restaurantScreenClass = PageFactory.initElements(driverBrowser, RestaurantScreenClass.class);
             addAddressClass = PageFactory.initElements(driverBrowser, AddAddressClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
 
-
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
         signInClass.chooseDevice();
         signInClass.signInClick(GlobalMethods.getPhone(), GlobalMethods.getPassword());
         mainScreenClass.chooseDevice();

@@ -65,11 +65,12 @@ public class MainScreenSidebarAddressTest {
             mainScreenSidebarAddressClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddressClass.class);
             mainScreenSidebarAddAddressClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddAddressClass.class);
             mainScreenSidebarAddressDeleteClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddressDeleteClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
+            driverBrowser.manage().window().maximize();
         }
 
 
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
+
         signInClass.chooseDevice();
         signInClass.signInClick("+79280373736","123456");
         mainScreenClass.chooseDevice();
