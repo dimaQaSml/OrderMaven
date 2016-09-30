@@ -1,12 +1,10 @@
 package TestsClient.Restaurant;
 
-import Client.MainScreenSidebarClass.MainScreenClass;
-import Client.Restaurant.RestaurantModalClass;
-import Client.Restaurant.RestaurantQuickOrderClass;
-import Client.Restaurant.RestaurantScreenClass;
-import Client.Restaurant.RestaurantSearchClass;
-import Client.SignInClass;
-import GlobalMethods.GlobalMethods;
+
+import TestClass.Client.MainScreenSidebarClass.MainScreenClass;
+import TestClass.Client.Restaurant.RestaurantQuickOrderClass;
+import TestClass.Client.SignInClass;
+import TestClass.GlobalMethods.GlobalMethods;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,7 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by dmitry on 04.08.16.
  */
-public class RestaurantQuickOrderTest {
+public class  RestaurantQuickOrderTest {
 
     WebDriver driver;
     SignInClass signInClass;

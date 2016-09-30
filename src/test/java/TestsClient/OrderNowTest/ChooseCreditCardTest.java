@@ -1,15 +1,11 @@
 package TestsClient.OrderNowTest;
 
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddQuickOrderClass;
-import Client.MainScreenSidebarClass.MainScreenClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarPaymentsClass;
-import Client.OrderNowClass.*;
-import Client.Restaurant.RestaurantModalClass;
-import Client.Restaurant.RestaurantScreenClass;
-import Client.SignInClass;
-import GlobalMethods.GlobalMethods;
+import TestClass.Client.MainScreenSidebarClass.MainScreenClass;
+import TestClass.Client.OrderNowClass.*;
+import TestClass.Client.Restaurant.RestaurantModalClass;
+import TestClass.Client.Restaurant.RestaurantScreenClass;
+import TestClass.Client.SignInClass;
+import TestClass.GlobalMethods.GlobalMethods;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;

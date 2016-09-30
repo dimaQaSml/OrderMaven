@@ -1,14 +1,11 @@
 package TestsClient;
 
-import Client.ForgotPasswordClass;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddOrderClass;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddQuickOrderClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderClass;
-import Client.MainScreenSidebarDeleteClass.MainScreenSidebarFavoriteOrderDeleteClass;
-import Client.SignInClass;
-import Client.VerificationCodeClass;
-import GlobalMethods.GlobalMethods;
-import Client.SignUpClass;
+
+import TestClass.Client.ForgotPasswordClass;
+import TestClass.Client.SignInClass;
+import TestClass.Client.SignUpClass;
+import TestClass.Client.VerificationCodeClass;
+import TestClass.GlobalMethods.GlobalMethods;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;

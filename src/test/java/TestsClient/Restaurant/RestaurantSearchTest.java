@@ -1,16 +1,12 @@
 package TestsClient.Restaurant;
 
-import Client.ForgotPasswordClass;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddAddressClass;
-import Client.MainScreenSidebarClass.MainScreenClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
-import Client.Restaurant.RestaurantModalClass;
-import Client.Restaurant.RestaurantScreenClass;
-import Client.Restaurant.RestaurantSearchClass;
-import Client.SignInClass;
-import Client.SignUpClass;
-import Client.VerificationCodeClass;
-import GlobalMethods.GlobalMethods;
+
+import TestClass.Client.MainScreenSidebarClass.MainScreenClass;
+import TestClass.Client.Restaurant.RestaurantModalClass;
+import TestClass.Client.Restaurant.RestaurantScreenClass;
+import TestClass.Client.Restaurant.RestaurantSearchClass;
+import TestClass.Client.SignInClass;
+import TestClass.GlobalMethods.GlobalMethods;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

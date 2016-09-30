@@ -1,12 +1,13 @@
 package TestsClient.Restaurant;
 
-import Client.MainScreenSidebarClass.MainScreenClass;
-import Client.Restaurant.RestaurantModalClass;
-import Client.Restaurant.RestaurantQuickOrderClass;
-import Client.Restaurant.RestaurantScreenClass;
-import Client.Restaurant.RestaurantSearchClass;
-import Client.SignInClass;
-import GlobalMethods.GlobalMethods;
+
+import TestClass.Client.MainScreenSidebarClass.MainScreenClass;
+import TestClass.Client.Restaurant.RestaurantModalClass;
+import TestClass.Client.Restaurant.RestaurantQuickOrderClass;
+import TestClass.Client.Restaurant.RestaurantScreenClass;
+import TestClass.Client.Restaurant.RestaurantSearchClass;
+import TestClass.Client.SignInClass;
+import TestClass.GlobalMethods.GlobalMethods;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

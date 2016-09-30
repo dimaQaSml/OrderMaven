@@ -1,13 +1,11 @@
 package TestsClient.MainScreenSidebarAddTest;
 
-import Client.*;
-import Client.ForgotPasswordClass;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddAddressClass;
-import Client.MainScreenSidebarClass.MainScreenClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
-import Client.SignInClass;
-import GlobalMethods.GlobalMethods;
-import Restaurant.*;
+
+import TestClass.Client.MainScreenSidebarAddClass.MainScreenSidebarAddAddressClass;
+import TestClass.Client.MainScreenSidebarClass.MainScreenClass;
+import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
+import TestClass.Client.SignInClass;
+import TestClass.GlobalMethods.GlobalMethods;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;

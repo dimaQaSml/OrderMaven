@@ -1,11 +1,10 @@
 package TestsClient.MainScreenSidebarAddTest;
 
-import Client.*;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddAddressClass;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddOrderClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderClass;
-import Client.MainScreenSidebarDeleteClass.MainScreenSidebarFavoriteOrderDeleteClass;
-import GlobalMethods.GlobalMethods;
+import TestClass.Client.MainScreenSidebarAddClass.MainScreenSidebarAddOrderClass;
+import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderClass;
+import TestClass.Client.MainScreenSidebarDeleteClass.MainScreenSidebarFavoriteOrderDeleteClass;
+import TestClass.Client.SignInClass;
+import TestClass.GlobalMethods.GlobalMethods;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;

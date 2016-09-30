@@ -31,6 +31,7 @@ TestClass/Restaurant/MobileCategories/SignUpStep2CategoriesClass.class
 TestClass/GlobalMethods/models/ValidationSignUpRestaurantStep2.class
 TestClass/Restaurant/SignUpClass/SignUpStep4Class.class
 TestClass/Restaurant/SignInClass.class
+OrderProjectClass/MainClass.class
 TestClass/GlobalMethods/models/ValidationAddAddress.class
 TestClass/Restaurant/MobileCategories/SignUpStep2AddMenuPhotosClass.class
 TestClass/Client/Restaurant/RestaurantQuickOrderClass.class

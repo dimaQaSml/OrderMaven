@@ -1,16 +1,15 @@
 package TestsClient.MainScreenSidebarAddTest;
 
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddAddressClass;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddOrderClass;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddPaymentsClass;
-import Client.MainScreenSidebarAddClass.MainScreenSidebarAddQuickOrderClass;
-import Client.MainScreenSidebarClass.MainScreenClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderClass;
-import Client.MainScreenSidebarClass.MainScreenSidebarPaymentsClass;
-import Client.MainScreenSidebarDeleteClass.MainScreenSidebarFavoriteOrderDeleteClass;
-import Client.SignInClass;
-import GlobalMethods.GlobalMethods;
+import TestClass.Client.MainScreenSidebarAddClass.MainScreenSidebarAddAddressClass;
+import TestClass.Client.MainScreenSidebarAddClass.MainScreenSidebarAddOrderClass;
+import TestClass.Client.MainScreenSidebarAddClass.MainScreenSidebarAddPaymentsClass;
+import TestClass.Client.MainScreenSidebarAddClass.MainScreenSidebarAddQuickOrderClass;
+import TestClass.Client.MainScreenSidebarClass.MainScreenClass;
+import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
+import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderClass;
+import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarPaymentsClass;
+import TestClass.Client.SignInClass;
+import TestClass.GlobalMethods.GlobalMethods;
 import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Ignore;
