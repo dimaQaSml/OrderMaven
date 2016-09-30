@@ -2,26 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="532b0f44-c221-40e1-b4aa-27a6ec3f340b" name="Default" comment="Working commit">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/OrderProjectClass/MainClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/ForgotPasswordClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarAddClass/MainScreenSidebarAddAddressClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarAddClass/MainScreenSidebarAddOrderClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarAddClass/MainScreenSidebarAddPaymentsClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarAddClass/MainScreenSidebarAddQuickOrderClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarClass/MainScreenClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarClass/MainScreenSidebarAddressClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarClass/MainScreenSidebarFavoriteOrderClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarClass/MainScreenSidebarPaymentsClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarDeleteClass/MainScreenSidebarAddressDeleteClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarDeleteClass/MainScreenSidebarFavoriteOrderDeleteClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/MainScreenSidebarDeleteClass/MainScreenSidebarPaymentsDeleteClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/AddAddressClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/ChooseCreditCardClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/ChooseOrderClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/CongratulationsClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/DeliveriesClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/DeliveriesReceivedClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/PaymentMethodClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/PlaceOrderClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/OrderNowClass/SummarySendClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/Restaurant/Rate_ReviewClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/Restaurant/RestaurantModalClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/Restaurant/RestaurantQuickOrderClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/Restaurant/RestaurantScreenClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/Restaurant/RestaurantSearchClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/Restaurant/SendReportClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/SignInClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/SignUpClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Client/VerificationCodeClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/GlobalMethods$Device.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/GlobalMethods.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationAddAddress.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationAddOrder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationAddQuickOrder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationChooseOrder.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationPayment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationSignUpRestaurantStep2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationSignUpRestaurantStep3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationValue.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationValueSignUpClient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/GlobalMethods/models/ValidationValueSignUpRestaurant.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/RaunnerClass/MainClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/ForgotPasswordClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/MainScreenMyRestaurant.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/MainScreenSidebar.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/MobileCategories/SignUpStep2AddMenuPhotosClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/MobileCategories/SignUpStep2AddRestaurantPhotosClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/MobileCategories/SignUpStep2CategoriesClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/MobileCategories/SignUpStep3DeliveryArea.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/SignInClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/SignUpClass/SignUpStep1Class.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/SignUpClass/SignUpStep2Class.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/SignUpClass/SignUpStep3Class.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/SignUpClass/SignUpStep4Class.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/SignUpClass/SignUpStep5Class.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/TestClass/Restaurant/StartPageClassMobile.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/ForgotPasswordTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/ForgotPasswordTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarAddTest/MainScreenSidebarAddAddressTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarAddTest/MainScreenSidebarAddAddressTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarAddTest/MainScreenSidebarAddOrderTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarAddTest/MainScreenSidebarAddOrderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarAddTest/MainScreenSidebarAddPaymentTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarAddTest/MainScreenSidebarAddPaymentTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarDeleteTest/MainScreenSidebarFavoriteOrderDeleteTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarDeleteTest/MainScreenSidebarFavoriteOrderDeleteTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarEditTest/MainScreenSidebarEditFavoriteOrderTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarEditTest/MainScreenSidebarEditFavoriteOrderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarTest/MainScreenSidebarAddressTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarTest/MainScreenSidebarAddressTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarTest/MainScreenSidebarFavoriteOrderTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarTest/MainScreenSidebarFavoriteOrderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarTest/MainScreenSidebarPaymentTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarTest/MainScreenSidebarPaymentTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarTest/MainScreenTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/MainScreenSidebarTest/MainScreenTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/AddAddressTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/AddAddressTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/ChooseCreditCardTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/ChooseCreditCardTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/ChooseOrderTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/ChooseOrderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/PaymentMethodTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/PaymentMethodTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/SummarySendTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/OrderNowTest/SummarySendTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/SignInTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/SignInTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/SignUpTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/SignUpTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/TestsClient/VerificationCodeTest.java" afterPath="$PROJECT_DIR$/src/test/java/TestsClient/VerificationCodeTest.java" />
     </list>
     <ignored path="OrderMaven.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.44499382">
-              <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -242,182 +284,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestsClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestsClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderNowTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestsClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainScreenSidebarTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestsClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainScreenSidebarEditTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestsClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainScreenSidebarDeleteTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OrderMaven" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestsClient" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MainScreenSidebarAddTest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1107,7 +973,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="17" y="23" width="1903" height="977" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1121,7 +987,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24288017" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24288017" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25040302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.86178863" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1603,7 +1469,7 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44499382">
-          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding />
         </state>
       </provider>

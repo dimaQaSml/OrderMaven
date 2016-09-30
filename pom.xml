@@ -27,7 +27,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <include>TestsClient/TestClass.java</include>
+                        <include>TestClass.java</include>
                     </includes>
                 </configuration>
             </plugin>
