@@ -1,8 +1,8 @@
 package TestsRestaurant;
 
-import GlobalMethods.GlobalMethods;
-import Restaurant.*;
-import Restaurant.SignUpClass.*;
+import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.Restaurant.SignInClass;
+import TestClass.Restaurant.SignUpClass.*;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;

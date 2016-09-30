@@ -1,11 +1,7 @@
 package TestsRestaurant;
 
-import GlobalMethods.GlobalMethods;
-import Restaurant.ForgotPasswordClass;
-import Restaurant.MainScreenMyRestaurant;
-import Restaurant.SignInClass;
-import Restaurant.SignUpClass.SignUpStep1Class;
-import Restaurant.StartPageClassMobile;
+import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.Restaurant.MainScreenMyRestaurant;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
