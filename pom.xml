@@ -28,6 +28,7 @@
                 <configuration>
                     <includes>
                         <include>TestClass.java</include>
+                        <include>TestClient/SignInTest.java</include>
                     </includes>
                 </configuration>
             </plugin>
