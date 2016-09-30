@@ -16,30 +16,35 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <!--<excludes>
+                         <exclude>Client/MainScreenSidebarAddClass/MainScreenSidebarAddAddressClass.java</exclude>
+                    </excludes>-->
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
-                <configuration>
+                <!--<configuration>
                     <includes>
-                        <include>Test*.java</include>
+                        <include>TestsClient/MainScreenSidebarAddTest/MainScreenSidebarAddAddressTest.java</include>
                     </includes>
-                </configuration>
+                </configuration>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <archive>
+                    <!--<archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>Work</mainClass>
-                            <packageName>RunnerClass</packageName>
+                            <mainClass>RaunnerClass.MainClass</mainClass>
                         </manifest>
-                    </archive>
+                    </archive>-->
+                    <includes>
+                       <!-- <include>com/company/inner/*.java</include>-->
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
@@ -77,8 +82,8 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
-            <scope>test</scope>
         </dependency>
+
 
     </dependencies>
 

@@ -45,28 +45,13 @@ public class SignInTest {
     public void before() throws InterruptedException, MalformedURLException {
         switch (GlobalMethods.chooseDevice()){
             case "web":
-                driverBrowser = new FirefoxDriver();
-                driverBrowser.get(GlobalMethods.getUrl());
+                GlobalMethods.web(driverBrowser);
                 break;
             case "ios":
-                capabilities = new DesiredCapabilities();
-                capabilities.setCapability("appium-version", "1.0");
-                capabilities.setCapability("platformName", "iOS");
-                capabilities.setCapability("platformVersion", "9.2");
-                capabilities.setCapability("deviceName", "iPhone 5s");
-                capabilities.setCapability("app", "/Users/dmitry/Downloads/OrderAppManager-6.ipa");
-                driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+                GlobalMethods.ios(capabilities, driver);
                 break;
             case "android":
-                capabilities = new DesiredCapabilities();
-                capabilities.setCapability("appium-version", "1.0");
-                capabilities.setCapability("platformName", "Android");
-                capabilities.setCapability("platformVersion", "4.4");
-                capabilities.setCapability("deviceName", "rtyuetrrtyurtuyftytykufuykfkuyfuyvgylughiulhuiftyehsesgrrt");
-                capabilities.setCapability("app", "/Users/dmitry/Downloads/app-stage-release-1.apk");
-                capabilities.setCapability("appPackage", "ps.orderapp.rest");
-                capabilities.setCapability("appActivity", "ps.orderapp.rest.views.welcome.WelcomeActivity");
-                driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+                GlobalMethods.android(capabilities, driver);
                 break;
         }
         if(driver != null) {
