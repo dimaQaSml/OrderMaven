@@ -40,7 +40,7 @@ public class MainScreenSidebarAddAddressTest {
     public void before() throws InterruptedException, MalformedURLException {
         switch (GlobalMethods.chooseDevice()){
             case "web":
-                driverBrowser = GlobalMethods.web(driverBrowser);
+                driverBrowser = GlobalMethods.web();
                 break;
             case "ios":
                 driver = GlobalMethods.ios(capabilities, driver);

@@ -17,13 +17,12 @@ import com.sun.glass.ui.View;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
 import java.io.*;
@@ -42,9 +41,14 @@ public class GlobalMethods {
         return String.valueOf(device);
     }
 
-    public static WebDriver web(WebDriver driverBrowser){
-        driverBrowser = new FirefoxDriver();
-        driverBrowser.get(GlobalMethods.getUrl());
+    public static WebDriver web() throws MalformedURLException {
+        /*driverBrowser = new FirefoxDriver();
+        driverBrowser.get(GlobalMethods.getUrl());*/
+        System.setProperty("webdriver.gecko.driver", "/Users/dmitry/IdeaProjects/SeleniumGrid/geckodriver");
+        DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+        capabilities.setCapability("marionette", true);
+        //capabilities.setVersion("46.0.1");
+        WebDriver driverBrowser = new RemoteWebDriver(new URL("http://192.168.10.156:4444/wd/hub"), capabilities);
         return driverBrowser;
     }
 
@@ -178,25 +182,12 @@ public class GlobalMethods {
         return result;
     }
 
-    /*public static String getEmail() {
-        int res = readFile();
-        FileOutputStream outputStream = null;
-        try {
-            outputStream = new FileOutputStream("/Users/dmitry/IdeaProjects/OrderAppAppium/emailIdCount2.txt");
-            outputStream.write(String.valueOf(++res).getBytes());
-            outputStream.flush();
-            outputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return email = "ddubtsov"+ res +"@smedialink.com";
-    }*/
 
     public static Integer getId() {
         int res = readFile();
         FileOutputStream outputStream = null;
         try {
-            outputStream = new FileOutputStream("/Users/dmitry/IdeaProjects/OrderAppAppium/emailIdCount2.txt");
+            outputStream = new FileOutputStream("/Users/dmitry/IdeaProjects/Order/emailIdCount2.txt");
             outputStream.write(String.valueOf(++res).getBytes());
             outputStream.flush();
             outputStream.close();

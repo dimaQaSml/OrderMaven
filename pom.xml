@@ -28,8 +28,10 @@
                 <configuration>
                     <includes>
                         <include>TestClass.java</include>
-                        <include>TestClient/SignInTest.java</include>
+                        <include>TestClass2.java</include>
                     </includes>
+                    <parallel>classes</parallel>
+                    <threadCount>2</threadCount>
                 </configuration>
             </plugin>
             <plugin>

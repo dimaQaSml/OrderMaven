@@ -42,13 +42,13 @@ public class ForgotPasswordTest {
     public void before() throws InterruptedException, MalformedURLException {
         switch (GlobalMethods.chooseDevice()){
             case "web":
-                GlobalMethods.web(driverBrowser);
+                driverBrowser = GlobalMethods.web();
                 break;
             case "ios":
-                GlobalMethods.ios(capabilities, driver);
+                driver = GlobalMethods.ios(capabilities, driver);
                 break;
             case "android":
-                GlobalMethods.android(capabilities, driver);
+                driver = GlobalMethods.android(capabilities, driver);
                 break;
         }
         if(driver != null) {
