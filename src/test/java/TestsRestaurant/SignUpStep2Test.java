@@ -58,6 +58,7 @@ public class SignUpStep2Test {
             signUpStep1Class = PageFactory.initElements(driver, SignUpStep1Class.class);
             signUpStep2Class = PageFactory.initElements(driver, SignUpStep2Class.class);
             forgotPasswordClass = PageFactory.initElements(driver,ForgotPasswordClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
         } else {
             signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);
             signUpStep1Class = PageFactory.initElements(driverBrowser, SignUpStep1Class.class);

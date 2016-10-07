@@ -23,7 +23,7 @@ public class  MainScreenSidebarAddAddressClass {
         this.driver = driver;
     }
 
-    String pathWeb = "";
+    String pathWeb = ".//*[@id='ModalContainer']/div/div/div[3]";
     String pathAndroid = "";
     String pathIOS = "";
 
@@ -31,7 +31,7 @@ public class  MainScreenSidebarAddAddressClass {
 
     private WebElement address;
 
-    private WebElement home;
+    private WebElement name;
 
     private WebElement getLocationButton;
 
@@ -43,19 +43,19 @@ public class  MainScreenSidebarAddAddressClass {
         waiting = new WebDriverWait(driver,20);
         switch (GlobalMethods.chooseDevice()) {
             case "web":
-                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
-                setAddress(driver.findElement(By.xpath(pathWeb + "")));
-                setCity(driver.findElement(By.xpath(pathWeb + "")));
-                setHome(driver.findElement(By.xpath(pathWeb + "")));
-                setGetLocationButton(driver.findElement(By.xpath(pathWeb + "")));
-                setCancelButton(driver.findElement(By.xpath(pathWeb + "")));
-                setSubmitButton(driver.findElement(By.xpath(pathWeb + "")));
+                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='ModalContainer']/div/div/div[2]/p")));
+                setAddress(driver.findElement(By.xpath(pathWeb + "/div[2]/input")));
+                setCity(driver.findElement(By.xpath(pathWeb + "/div[1]/input")));
+                setName(driver.findElement(By.xpath(pathWeb + "/input")));
+                setGetLocationButton(driver.findElement(By.xpath(pathWeb + "/div[3]/p")));
+                setCancelButton(driver.findElement(By.xpath(pathWeb + "/div[4]/button[1]")));
+                setSubmitButton(driver.findElement(By.xpath(pathWeb + "/div[4]/button[2]")));
                 break;
             case "ios":
                 waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
                 setAddress(driver.findElement(By.xpath(pathWeb + "")));
                 setCity(driver.findElement(By.xpath(pathWeb + "")));
-                setHome(driver.findElement(By.xpath(pathWeb + "")));
+                setName(driver.findElement(By.xpath(pathWeb + "")));
                 setGetLocationButton(driver.findElement(By.xpath(pathWeb + "")));
                 setCancelButton(driver.findElement(By.xpath(pathWeb + "")));
                 setSubmitButton(driver.findElement(By.xpath(pathWeb + "")));
@@ -64,7 +64,7 @@ public class  MainScreenSidebarAddAddressClass {
                 waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
                 setAddress(driver.findElement(By.xpath(pathWeb + "")));
                 setCity(driver.findElement(By.xpath(pathWeb + "")));
-                setHome(driver.findElement(By.xpath(pathWeb + "")));
+                setName(driver.findElement(By.xpath(pathWeb + "")));
                 setGetLocationButton(driver.findElement(By.xpath(pathWeb + "")));
                 setCancelButton(driver.findElement(By.xpath(pathWeb + "")));
                 setSubmitButton(driver.findElement(By.xpath(pathWeb + "")));
@@ -72,10 +72,10 @@ public class  MainScreenSidebarAddAddressClass {
         }
     }
 
-    public void addAddress( String city, String street, String home){
+    public void addAddress( String city, String street, String name){
         getCity().sendKeys(city);
         getAddress().sendKeys(street);
-        getHome().sendKeys(home);
+        getName().sendKeys(name);
         getSubmitButton().click();
     }
 
@@ -86,12 +86,12 @@ public class  MainScreenSidebarAddAddressClass {
         while(!getAddress().getAttribute("value").isEmpty()){
             getAddress().sendKeys(Keys.BACK_SPACE);
         }
-        while(!getHome().getAttribute("value").isEmpty()){
-            getHome().sendKeys(Keys.BACK_SPACE);
+        while(!getName().getAttribute("value").isEmpty()){
+            getName().sendKeys(Keys.BACK_SPACE);
         }
         getCity().sendKeys(city);
         getAddress().sendKeys(street);
-        getHome().sendKeys(home);
+        getName().sendKeys(home);
     }
 
     public void cancelClick(){
@@ -109,7 +109,7 @@ public class  MainScreenSidebarAddAddressClass {
     public boolean getLocation() throws InterruptedException {
         getGetLocationButton().click();
         Thread.sleep(700);
-        if(getCity().getAttribute("value").isEmpty() && getAddress().getAttribute("value").isEmpty() && getHome().getAttribute("value").isEmpty()){
+        if(getCity().getAttribute("value").isEmpty() && getAddress().getAttribute("value").isEmpty() && getName().getAttribute("value").isEmpty()){
             return false;
         } else{
             return true;
@@ -118,7 +118,7 @@ public class  MainScreenSidebarAddAddressClass {
 
     public boolean testCase42(){
         getGetLocationButton().click();
-        if(!getCity().equals("") && !getAddress().equals("") && !getHome().equals("")){
+        if(!getCity().equals("") && !getAddress().equals("") && !getName().equals("")){
             return true;
         } else{
             return false;
@@ -126,7 +126,7 @@ public class  MainScreenSidebarAddAddressClass {
     }
 
     public boolean testCase76() throws InterruptedException {
-        addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         MainScreenSidebarAddressClass mainScreenSidebarAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddressClass.class);
         mainScreenSidebarAddressClass.chooseDevice();
         //Переходим на страницу редактирования созданного адреса
@@ -135,7 +135,7 @@ public class  MainScreenSidebarAddAddressClass {
         getCancelButton().click();
         //
         mainScreenSidebarAddressClass.getEditAddressButton().get(0).click();
-        if(getCity().equals(GlobalMethods.getCityEdit()) || getAddress().equals(GlobalMethods.getAddressEdit()) || getHome().equals(GlobalMethods.getHomeEdit())){
+        if(getCity().equals(GlobalMethods.getCityEdit()) || getAddress().equals(GlobalMethods.getAddressEdit()) || getName().equals(GlobalMethods.getHomeEdit())){
             return false;
         } else {
             return true;
@@ -143,7 +143,7 @@ public class  MainScreenSidebarAddAddressClass {
     }
 
     public boolean testCase63() throws InterruptedException {
-        addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         MainScreenSidebarAddressClass mainScreenSidebarAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddressClass.class);
         mainScreenSidebarAddressClass.chooseDevice();
         //Переходим на страницу редактирования созданного адреса
@@ -159,7 +159,7 @@ public class  MainScreenSidebarAddAddressClass {
     }
 
     public boolean testCase85() throws InterruptedException {
-        addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         MainScreenSidebarAddressClass mainScreenSidebarAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddressClass.class);
         mainScreenSidebarAddressClass.chooseDevice();
         //Переходим на страницу редактирования созданного адреса
@@ -176,12 +176,12 @@ public class  MainScreenSidebarAddAddressClass {
         }
     }
 
-    public WebElement getHome() {
-        return home;
+    public WebElement getName() {
+        return name;
     }
 
-    public void setHome(WebElement home) {
-        this.home = home;
+    public void setName(WebElement name) {
+        this.name = name;
     }
 
     public WebElement getCity() {

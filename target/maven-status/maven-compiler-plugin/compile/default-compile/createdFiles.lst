@@ -56,3 +56,4 @@ TestClass/Restaurant/StartPageClassMobile.class
 TestClass/GlobalMethods/models/ValidationSignUpRestaurantStep3.class
 TestClass/Restaurant/ForgotPasswordClass.class
 TestClass/Restaurant/SignUpClass/SignUpStep2Class.class
+TestClass/Client/AuthorizationClass.class

@@ -132,7 +132,7 @@ public class MainScreenSidebarAddQuickOrderClass {
             getAddressElementsList().get(0).click();
             MainScreenSidebarAddAddressClass mainScreenSidebarAddAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddAddressClass.class);
             mainScreenSidebarAddAddressClass.chooseDevice();
-            mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(),GlobalMethods.getAddress(),GlobalMethods.getHome());
+            mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(),GlobalMethods.getAddress(),GlobalMethods.getName());
         } else {
             getAddressElementsList().get(1).click();
         }

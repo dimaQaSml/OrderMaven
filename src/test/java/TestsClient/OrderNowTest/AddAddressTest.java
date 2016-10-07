@@ -41,7 +41,7 @@ public class AddAddressTest{
     public void before() throws InterruptedException, MalformedURLException {
         switch (GlobalMethods.chooseDevice()){
             case "web":
-                GlobalMethods.web();
+                driverBrowser = GlobalMethods.web();
                 break;
             case "ios":
                 GlobalMethods.ios(capabilities, driver);
@@ -50,13 +50,14 @@ public class AddAddressTest{
                 GlobalMethods.android(capabilities, driver);
                 break;
         }
-        if(driver != null) {
+        if(driverBrowser != null) {
             signInClass = PageFactory.initElements(driver, SignInClass.class);
             mainScreenClass = PageFactory.initElements(driver, MainScreenClass.class);
             chooseOrderClass = PageFactory.initElements(driver, ChooseOrderClass.class);
             restaurantModalClass = PageFactory.initElements(driver, RestaurantModalClass.class);
             restaurantScreenClass = PageFactory.initElements(driver, RestaurantScreenClass.class);
             addAddressClass = PageFactory.initElements(driver, AddAddressClass.class);
+
 
         } else {
             signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);

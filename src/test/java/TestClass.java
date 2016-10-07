@@ -29,6 +29,6 @@ public class TestClass {
 
     @After
     public void after(){
-        driverBrowser.close();
+        driverBrowser.quit();
     }
 }

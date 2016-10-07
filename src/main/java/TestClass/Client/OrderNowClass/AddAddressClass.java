@@ -43,7 +43,7 @@ public class AddAddressClass extends MainScreenSidebarAddAddressClass {
                 setAddress(driver.findElement(By.xpath(pathWeb + "")));
                 setCity(driver.findElement(By.xpath(pathWeb + "")));
                 setGetLocationButton(driver.findElement(By.xpath(pathWeb + "")));
-                setHome(driver.findElement(By.xpath(pathWeb + "")));
+                setName(driver.findElement(By.xpath(pathWeb + "")));
                 setCancelButton(driver.findElement(By.xpath(pathWeb + "")));
                 setSubmitButton(driver.findElement(By.xpath(pathWeb + "")));
                 break;
@@ -53,7 +53,7 @@ public class AddAddressClass extends MainScreenSidebarAddAddressClass {
                 setAddress(driver.findElement(By.xpath(pathWeb + "")));
                 setCity(driver.findElement(By.xpath(pathWeb + "")));
                 setGetLocationButton(driver.findElement(By.xpath(pathWeb + "")));
-                setHome(driver.findElement(By.xpath(pathWeb + "")));
+                setName(driver.findElement(By.xpath(pathWeb + "")));
                 setCancelButton(driver.findElement(By.xpath(pathWeb + "")));
                 setSubmitButton(driver.findElement(By.xpath(pathWeb + "")));
                 break;
@@ -63,7 +63,7 @@ public class AddAddressClass extends MainScreenSidebarAddAddressClass {
                 setAddress(driver.findElement(By.xpath(pathWeb + "")));
                 setCity(driver.findElement(By.xpath(pathWeb + "")));
                 setGetLocationButton(driver.findElement(By.xpath(pathWeb + "")));
-                setHome(driver.findElement(By.xpath(pathWeb + "")));
+                setName(driver.findElement(By.xpath(pathWeb + "")));
                 setCancelButton(driver.findElement(By.xpath(pathWeb + "")));
                 setSubmitButton(driver.findElement(By.xpath(pathWeb + "")));
                 break;
@@ -79,7 +79,7 @@ public class AddAddressClass extends MainScreenSidebarAddAddressClass {
         chooseDevice();
         getChooseAddressSelect().click();
         getGetChooseAddressElementsList().get(0).click();
-        if(getHome().isEnabled() || getAddress().isEnabled() || getCity().isEnabled() || getGetLocationButton().isEnabled()){
+        if(getName().isEnabled() || getAddress().isEnabled() || getCity().isEnabled() || getGetLocationButton().isEnabled()){
             return false;
         } else{
             return true;

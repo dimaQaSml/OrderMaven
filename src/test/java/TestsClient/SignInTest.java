@@ -41,7 +41,7 @@ public class SignInTest {
     public void before() throws InterruptedException, MalformedURLException {
         switch (GlobalMethods.chooseDevice()){
             case "web":
-                GlobalMethods.web();
+                driverBrowser = GlobalMethods.web();
                 break;
             case "ios":
                 GlobalMethods.ios(capabilities, driver);
@@ -50,7 +50,7 @@ public class SignInTest {
                 GlobalMethods.android(capabilities, driver);
                 break;
         }
-        if(driver != null) {
+        if(driverBrowser != null) {
             signInClass = PageFactory.initElements(driver, SignInClass.class);
             forgotPasswordClass = PageFactory.initElements(driver,ForgotPasswordClass.class);
 

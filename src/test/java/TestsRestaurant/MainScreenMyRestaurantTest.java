@@ -48,6 +48,7 @@ public class MainScreenMyRestaurantTest {
         }
         if(driver != null) {
             mainScreenMyRestaurant = PageFactory.initElements(driver, MainScreenMyRestaurant.class);
+            driverBrowser.get(GlobalMethods.getUrl());
         } else {
             mainScreenMyRestaurant = PageFactory.initElements(driverBrowser, MainScreenMyRestaurant.class);
         }

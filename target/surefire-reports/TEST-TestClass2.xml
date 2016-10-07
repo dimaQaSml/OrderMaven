@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestClass2" time="5.979" tests="2" errors="2" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestClass2" time="5.574" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="15.0.6"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -12,7 +12,7 @@
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="file.encoding.pkg" value="sun.io"/>
-    <property name="idea.launcher.port" value="7540"/>
+    <property name="idea.launcher.port" value="7536"/>
     <property name="user.country" value="RU"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
@@ -63,24 +63,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="test" classname="TestClass2" time="5.979">
-    <error message="Error forwarding the new session Request timed out waiting for a node to become available.&#10;Command duration or timeout: 5.27 seconds&#10;Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;&#10;System info: host: &apos;Dmitry-Dubtsov.local&apos;, ip: &apos;192.168.10.156&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.10.5&apos;, java.version: &apos;1.8.0_65&apos;&#10;Driver info: org.openqa.selenium.remote.RemoteWebDriver" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: 
-Error forwarding the new session Request timed out waiting for a node to become available.
-Command duration or timeout: 5.27 seconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'Dmitry-Dubtsov.local', ip: '192.168.10.156', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0_65'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-	at TestClass2.test(TestClass2.java:23)
-Caused by: org.openqa.selenium.WebDriverException: 
-Error forwarding the new session Request timed out waiting for a node to become available.
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'Dmitry-Dubtsov.local', ip: '192.168.10.156', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0_65'
-Driver info: driver.version: unknown
-</error>
-  </testcase>
-  <testcase name="test" classname="TestClass2" time="0">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at TestClass2.after(TestClass2.java:30)
-</error>
-  </testcase>
+  <testcase name="test" classname="TestClass2" time="5.574"/>
 </testsuite>

@@ -65,6 +65,7 @@ public class ForgotPasswordTest {
         if(driver != null) {
             signInClass = PageFactory.initElements(driver, SignInClass.class);
             forgotPasswordClass = PageFactory.initElements(driver,ForgotPasswordClass.class);
+            driverBrowser.get(GlobalMethods.getUrl());
         } else {
             signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);
             forgotPasswordClass = PageFactory.initElements(driverBrowser,ForgotPasswordClass.class);

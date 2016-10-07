@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,7 +29,7 @@ public class MainScreenSidebarAddressClass {
 
     private WebElement addressSection;
 
-    private List<WebElement> addAddressButton;
+    private WebElement addAddressButton;
 
     private List<WebElement> addressLabel;
 
@@ -42,8 +43,8 @@ public class MainScreenSidebarAddressClass {
         waiting = new WebDriverWait(driver,10);
         switch (GlobalMethods.chooseDevice()) {
             case "web":
-                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
-                setAddressSection(driver.findElement(By.xpath(pathWeb + "")));
+                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[1]/div[2]/p")));
+                setAddressSection(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[2]/div/div[3]/div[1]/div[2]/p")));
                 break;
             case "ios":
                 waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
@@ -58,20 +59,24 @@ public class MainScreenSidebarAddressClass {
     }
 
     public void addAddressButtonClick(){
-        waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
-        setAddAddressButton(driver.findElements(By.xpath("")));
-        getAddAddressButton().get(0).click();
+        waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[5]/button")));
+        setAddAddressButton(driver.findElement(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[5]/button")));
+        getAddAddressButton().click();
     }
 
     public void addAddressButtonFind(){
         waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
-        setAddAddressButton(driver.findElements(By.xpath("")));
+        setAddAddressButton(driver.findElement(By.xpath("")));
     }
 
     public List<WebElement> countAddressElementsBefore(){
         try{
-            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
-            setAddressList(driver.findElements(By.xpath("")));
+            if(!driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")).equals(null)) {
+                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")));
+                setAddressList(driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")));
+            } else{
+                return new ArrayList<WebElement>();
+            }
         } catch (org.openqa.selenium.TimeoutException e){
             return null;
         }
@@ -80,8 +85,8 @@ public class MainScreenSidebarAddressClass {
 
     public boolean checkAddAddress(List<WebElement> countOrderElementsBefore){
         try{
-            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
-            setAddressList(driver.findElements(By.xpath("")));
+            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")));
+            setAddressList(driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")));
         } catch (org.openqa.selenium.TimeoutException e){
             return false;
         }
@@ -115,11 +120,11 @@ public class MainScreenSidebarAddressClass {
         this.addressSection = addressSection;
     }
 
-    public List<WebElement> getAddAddressButton() {
+    public WebElement getAddAddressButton() {
         return addAddressButton;
     }
 
-    public void setAddAddressButton(List<WebElement> addAddressButton) {
+    public void setAddAddressButton(WebElement addAddressButton) {
         this.addAddressButton = addAddressButton;
     }
 

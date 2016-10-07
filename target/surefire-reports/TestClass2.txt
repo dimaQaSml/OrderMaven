@@ -1,22 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestClass2
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 5.979 sec <<< FAILURE! - in TestClass2
-test(TestClass2)  Time elapsed: 5.979 sec  <<< ERROR!
-org.openqa.selenium.WebDriverException: 
-Error forwarding the new session Request timed out waiting for a node to become available.
-Command duration or timeout: 5.27 seconds
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'Dmitry-Dubtsov.local', ip: '192.168.10.156', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0_65'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-	at TestClass2.test(TestClass2.java:23)
-Caused by: org.openqa.selenium.WebDriverException: 
-Error forwarding the new session Request timed out waiting for a node to become available.
-Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'Dmitry-Dubtsov.local', ip: '192.168.10.156', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.5', java.version: '1.8.0_65'
-Driver info: driver.version: unknown
-
-test(TestClass2)  Time elapsed: 0 sec  <<< ERROR!
-java.lang.NullPointerException
-	at TestClass2.after(TestClass2.java:30)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.574 sec - in TestClass2

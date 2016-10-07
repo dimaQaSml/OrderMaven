@@ -27,7 +27,7 @@ public class MainScreenClass {
         this.driver = driver;
     }
 
-    String pathWeb = ".//*[@id='Container']/div[3]/div/div[1]";
+    String pathWeb = "";
     String pathAndroid = "";
     String pathIOS = "";
 
@@ -67,22 +67,19 @@ public class MainScreenClass {
         waiting = new WebDriverWait(driver,20);
         switch (GlobalMethods.chooseDevice()) {
             case "web":
-                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[3]/div/div[1]/div[1]/div[2]/label")));
-                setLogo(driver.findElement(By.xpath(pathWeb + "/div[1]/div[2]/label")));
-                setFullName(driver.findElement(By.xpath(pathWeb + "/div[2]/div/div[1]/input")));
-                setEmailAddress(driver.findElement(By.xpath(pathWeb + "/div[2]/div/div[2]/input")));
-                setFavoriteOrderSection(driver.findElement(By.xpath(pathWeb + "")));
-                setQuickOrderList(driver.findElements(By.xpath(pathWeb + "")));
-                setEditQuickOrderList(driver.findElements(By.xpath(pathWeb + "")));
-                setOrderNowList(driver.findElements(By.xpath(pathWeb + "")));
-                setAddQuickOrder(driver.findElement(By.xpath(pathWeb + "")));
-                setAddressSection(driver.findElement(By.xpath(pathWeb + "")));
-                setPaymentSection(driver.findElement(By.xpath(pathWeb + "")));
-                setRestaurantsScreen(driver.findElement(By.xpath(pathWeb + "")));
-                setChatScreen(driver.findElement(By.xpath(pathWeb + "")));
-                setMyProfileScreen(driver.findElement(By.xpath(pathWeb + "")));
-                setHebrewScreen(driver.findElement(By.xpath(pathWeb + "")));
-                setSettingScreen(driver.findElement(By.xpath(pathWeb + "")));
+                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[1]/div[1]/p")));
+                setLogo(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[2]/div/div[1]/div[3]/div[2]/input")));
+                setFullName(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[2]/div/div[1]/div[3]/div[1]/input")));
+                setEmailAddress(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[2]/div/div[1]/div[3]/div[2]/input")));
+                setFavoriteOrderSection(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[2]/div/div[3]/div[1]/div[1]/p")));
+                setAddQuickOrder(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[2]/div/div[2]/div[2]/div[2]/button")));
+                setAddressSection(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[2]/div/div[3]/div[1]/div[2]/p")));
+                setPaymentSection(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[2]/div/div[3]/div[1]/div[3]/div")));
+                setRestaurantsScreen(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[1]/div[2]/div[5]/p")));
+                setChatScreen(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[1]/div[2]/div[3]/p")));
+                setMyProfileScreen(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[1]/div[2]/div[3]/p")));
+                setHebrewScreen(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[1]/div[2]/div[2]/p")));
+                setSettingScreen(driver.findElement(By.xpath(pathWeb + ".//*[@id='Container']/div[1]/div[2]/div[1]/img")));
                 beforeQuickOrder = countQuickOrderElementsBefore();
                 break;
             case "ios":
@@ -91,9 +88,6 @@ public class MainScreenClass {
                 setFullName(driver.findElement(By.xpath(pathWeb + "")));
                 setEmailAddress(driver.findElement(By.xpath(pathWeb + "")));
                 setFavoriteOrderSection(driver.findElement(By.xpath(pathWeb + "")));
-                setQuickOrderList(driver.findElements(By.xpath(pathWeb + "")));
-                setEditQuickOrderList(driver.findElements(By.xpath(pathWeb + "")));
-                setOrderNowList(driver.findElements(By.xpath(pathWeb + "")));
                 setAddQuickOrder(driver.findElement(By.xpath(pathWeb + "")));
                 setAddressSection(driver.findElement(By.xpath(pathWeb + "")));
                 setPaymentSection(driver.findElement(By.xpath(pathWeb + "")));
@@ -110,9 +104,6 @@ public class MainScreenClass {
                 setFullName(driver.findElement(By.xpath(pathWeb + "")));
                 setEmailAddress(driver.findElement(By.xpath(pathWeb + "")));
                 setFavoriteOrderSection(driver.findElement(By.xpath(pathWeb + "")));
-                setQuickOrderList(driver.findElements(By.xpath(pathWeb + "")));
-                setEditQuickOrderList(driver.findElements(By.xpath(pathWeb + "")));
-                setOrderNowList(driver.findElements(By.xpath(pathWeb + "")));
                 setAddQuickOrder(driver.findElement(By.xpath(pathWeb + "")));
                 setAddressSection(driver.findElement(By.xpath(pathWeb + "")));
                 setPaymentSection(driver.findElement(By.xpath(pathWeb + "")));
@@ -242,7 +233,7 @@ public class MainScreenClass {
                 if(mainScreenSidebarAddQuickOrderClass.getFavoriteOrder().getAttribute("value").equals(GlobalMethods.getOrder()) &&
                         mainScreenSidebarAddQuickOrderClass.getAddress().getAttribute("value").contains(GlobalMethods.getCity()) &&
                         mainScreenSidebarAddQuickOrderClass.getAddress().getAttribute("value").contains(GlobalMethods.getAddress()) &&
-                        mainScreenSidebarAddQuickOrderClass.getAddress().getAttribute("value").contains(GlobalMethods.getHome()) &&
+                        mainScreenSidebarAddQuickOrderClass.getAddress().getAttribute("value").contains(GlobalMethods.getName()) &&
                         mainScreenSidebarAddQuickOrderClass.getPayment().getAttribute("value").contains(GlobalMethods.getNameCard())){
                     return true;
                 } else {
@@ -355,7 +346,7 @@ public class MainScreenClass {
         mainScreenSidebarAddQuickOrderClass.getAddressElementsList().get(0).click();
         int beforeElementsListCount = mainScreenSidebarAddQuickOrderClass.getAddressElementsList().size();
         MainScreenSidebarAddAddressClass mainScreenSidebarAddAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddAddressClass.class);
-        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         mainScreenSidebarAddQuickOrderClass.chooseDevice();
         mainScreenSidebarAddQuickOrderClass.getAddressSelect().click();
         if(beforeElementsListCount < mainScreenSidebarAddQuickOrderClass.getAddressElementsList().size()){

@@ -57,7 +57,7 @@ public class MainScreenSidebarAddQuickOrderTest {
         driver.get(GlobalMethods.getUrl());
         driver.manage().window().maximize();
         signInClass.chooseDevice();
-        signInClass.signInClick("+79280373736","123456");
+        signInClass.signInClick(GlobalMethods.getRealPhone(), GlobalMethods.getPassword());
 
         //Проверяем наличие созданных order, address, payment, если не созданы создаем
         mainScreenClass.chooseDevice();
@@ -82,7 +82,7 @@ public class MainScreenSidebarAddQuickOrderTest {
         if(before.size()<1) {
             mainScreenSidebarAddressClass.addAddressButtonClick();
             mainScreenSidebarAddAddressClass.chooseDevice();
-            mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCountry(),GlobalMethods.getCity(), GlobalMethods.getHome());
+            mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCountry(),GlobalMethods.getCity(), GlobalMethods.getName());
             mainScreenSidebarAddressClass.chooseDevice();
         }
         mainScreenClass.paymentSectionClick();
@@ -127,7 +127,7 @@ public class MainScreenSidebarAddQuickOrderTest {
     @Ignore
     @Test
     public void testCase61() throws InterruptedException {
-        mainScreenSidebarAddQuickOrderClass.getAddress().sendKeys(GlobalMethods.getCountry() + "," + GlobalMethods.getCity() + "," + GlobalMethods.getHome());
+        mainScreenSidebarAddQuickOrderClass.getAddress().sendKeys(GlobalMethods.getCountry() + "," + GlobalMethods.getCity() + "," + GlobalMethods.getName());
         mainScreenSidebarAddQuickOrderClass.getFavoriteOrder().sendKeys(GlobalMethods.getRestaurant());
         boolean result = GlobalMethods.validationPaymentList(mainScreenSidebarAddQuickOrderClass);
         Assert.assertTrue("Error!", result);

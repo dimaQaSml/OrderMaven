@@ -42,15 +42,18 @@ public class GlobalMethods {
     }
 
     public static WebDriver web() throws MalformedURLException {
-        /*driverBrowser = new FirefoxDriver();
-        driverBrowser.get(GlobalMethods.getUrl());*/
-        System.setProperty("webdriver.gecko.driver", "/Users/dmitry/IdeaProjects/SeleniumGrid/geckodriver");
+        //System.setProperty("webdriver.gecko.driver", "/Users/Selenium/geckodriver");
         DesiredCapabilities capabilities = DesiredCapabilities.firefox();
         capabilities.setCapability("marionette", true);
-        //capabilities.setVersion("46.0.1");
         WebDriver driverBrowser = new RemoteWebDriver(new URL("http://192.168.10.156:4444/wd/hub"), capabilities);
         return driverBrowser;
     }
+
+    /*public static WebDriver web() throws MalformedURLException {
+        WebDriver driverBrowser = new FirefoxDriver();
+        driverBrowser.get(GlobalMethods.getUrl());
+        return driverBrowser;
+    }*/
 
     public static AppiumDriver android(DesiredCapabilities capabilities, AppiumDriver driver) throws MalformedURLException {
         capabilities = new DesiredCapabilities();
@@ -91,7 +94,7 @@ public class GlobalMethods {
 
     private static String fakePassword = "test1234";
 
-    private static String realPhone = "9182755268";
+    private static String realPhone = "+79280373736";
 
     private static String restaurant = "KFC";
 
@@ -187,7 +190,7 @@ public class GlobalMethods {
         int res = readFile();
         FileOutputStream outputStream = null;
         try {
-            outputStream = new FileOutputStream("/Users/dmitry/IdeaProjects/Order/emailIdCount2.txt");
+            outputStream = new FileOutputStream("/Users/dmitry/IdeaProjects/OrderMaven/emailIdCount2.txt");
             outputStream.write(String.valueOf(++res).getBytes());
             outputStream.flush();
             outputStream.close();
@@ -209,7 +212,7 @@ public class GlobalMethods {
         return address = "testAddress" + getId();
     }
 
-    public static String getHome() {
+    public static String getName() {
         return home = "testAddress" + getId();
     }
 
@@ -845,7 +848,7 @@ public class GlobalMethods {
         for(int i=0;i<listValidationAddAddress.size();i++){
             mainScreenSidebarAddAddressClass.getCity().sendKeys(listValidationAddAddress.get(i).city);
             mainScreenSidebarAddAddressClass.getAddress().sendKeys(listValidationAddAddress.get(i).address);
-            mainScreenSidebarAddAddressClass.getHome().sendKeys(listValidationAddAddress.get(i).home);
+            mainScreenSidebarAddAddressClass.getName().sendKeys(listValidationAddAddress.get(i).home);
             //TODO: Переделать sleep! говно!
             Thread.sleep(700);
             if(mainScreenSidebarAddAddressClass.getSubmitButton().isEnabled() && listValidationAddAddress.get(i).key == false || !mainScreenSidebarAddAddressClass.getSubmitButton().isEnabled() && listValidationAddAddress.get(i).key == true){
@@ -857,8 +860,8 @@ public class GlobalMethods {
             while(!mainScreenSidebarAddAddressClass.getAddress().getAttribute("value").isEmpty()){
                 mainScreenSidebarAddAddressClass.getAddress().sendKeys(Keys.BACK_SPACE);
             }
-            while(!mainScreenSidebarAddAddressClass.getHome().getAttribute("value").isEmpty()){
-                mainScreenSidebarAddAddressClass.getHome().sendKeys(Keys.BACK_SPACE);
+            while(!mainScreenSidebarAddAddressClass.getName().getAttribute("value").isEmpty()){
+                mainScreenSidebarAddAddressClass.getName().sendKeys(Keys.BACK_SPACE);
             }
         }
         return true;

@@ -44,7 +44,7 @@ public class MainScreenSidebarFavoriteOrderTest {
     public void before() throws InterruptedException, MalformedURLException {
         switch (GlobalMethods.chooseDevice()){
             case "web":
-                GlobalMethods.web();
+                driverBrowser = GlobalMethods.web();
                 break;
             case "ios":
                 GlobalMethods.ios(capabilities, driver);
@@ -53,12 +53,13 @@ public class MainScreenSidebarFavoriteOrderTest {
                 GlobalMethods.android(capabilities, driver);
                 break;
         }
-        if(driver != null) {
+        if(driverBrowser != null) {
             signInClass = PageFactory.initElements(driver, SignInClass.class);
             mainScreenSidebarFavoriteOrderClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderClass.class);
             mainScreenSidebarAddQuickOrderClass = PageFactory.initElements(driver, MainScreenSidebarAddQuickOrderClass.class);
             mainScreenSidebarAddOrderClass = PageFactory.initElements(driver, MainScreenSidebarAddOrderClass.class);
             mainScreenSidebarFavoriteOrderDeleteClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderDeleteClass.class);
+
 
         } else {
             signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);
@@ -72,7 +73,7 @@ public class MainScreenSidebarFavoriteOrderTest {
 
         before = new ArrayList<>();
         signInClass.chooseDevice();
-        signInClass.signInClick("+79280373736","123456");
+        signInClass.signInClick(GlobalMethods.getRealPhone(), GlobalMethods.getPassword());
         mainScreenSidebarFavoriteOrderClass.chooseDevice();
         before = mainScreenSidebarFavoriteOrderClass.countOrdersElementsBefore();
         mainScreenSidebarFavoriteOrderClass.addOrderButtonClick();

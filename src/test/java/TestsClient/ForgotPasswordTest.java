@@ -51,7 +51,7 @@ public class ForgotPasswordTest {
                 driver = GlobalMethods.android(capabilities, driver);
                 break;
         }
-        if(driver != null) {
+        if(driverBrowser != null) {
             signInClass = PageFactory.initElements(driver, SignInClass.class);
             forgotPasswordClass = PageFactory.initElements(driver,ForgotPasswordClass.class);
             verificationCodeClass = PageFactory.initElements(driver,VerificationCodeClass.class);

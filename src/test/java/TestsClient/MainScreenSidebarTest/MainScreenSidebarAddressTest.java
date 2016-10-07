@@ -43,7 +43,7 @@ public class MainScreenSidebarAddressTest {
     public void before() throws InterruptedException, MalformedURLException {
         switch (GlobalMethods.chooseDevice()){
             case "web":
-                GlobalMethods.web();
+                driverBrowser = GlobalMethods.web();
                 break;
             case "ios":
                 GlobalMethods.ios(capabilities, driver);
@@ -52,12 +52,13 @@ public class MainScreenSidebarAddressTest {
                 GlobalMethods.android(capabilities, driver);
                 break;
         }
-        if(driver != null) {
+        if(driverBrowser != null) {
             signInClass = PageFactory.initElements(driver, SignInClass.class);
             mainScreenClass = PageFactory.initElements(driver, MainScreenClass.class);
             mainScreenSidebarAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddressClass.class);
             mainScreenSidebarAddAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddAddressClass.class);
             mainScreenSidebarAddressDeleteClass = PageFactory.initElements(driver, MainScreenSidebarAddressDeleteClass.class);
+
 
         } else {
             signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);
@@ -72,7 +73,7 @@ public class MainScreenSidebarAddressTest {
 
 
         signInClass.chooseDevice();
-        signInClass.signInClick("+79280373736","123456");
+        signInClass.signInClick(GlobalMethods.getRealPhone(), GlobalMethods.getPassword());
         mainScreenClass.chooseDevice();
         mainScreenClass.getAddressSection().click();
         mainScreenSidebarAddressClass.chooseDevice();
@@ -90,11 +91,11 @@ public class MainScreenSidebarAddressTest {
     public void testCase43() throws InterruptedException {
         mainScreenSidebarAddressClass.addAddressButtonClick();
         mainScreenSidebarAddAddressClass.chooseDevice();
-        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         mainScreenSidebarAddressClass.chooseDevice();
         mainScreenSidebarAddressClass.getEditAddressButton().get(0).click();
         if(mainScreenSidebarAddAddressClass.getCity().equals(GlobalMethods.getCity())
-                && mainScreenSidebarAddAddressClass.getAddress().equals(GlobalMethods.getAddress()) && mainScreenSidebarAddAddressClass.getHome().equals(GlobalMethods.getHome())) {
+                && mainScreenSidebarAddAddressClass.getAddress().equals(GlobalMethods.getAddress()) && mainScreenSidebarAddAddressClass.getName().equals(GlobalMethods.getName())) {
             Assert.assertTrue(true);
         } else {
             Assert.fail("Error!");
@@ -106,7 +107,7 @@ public class MainScreenSidebarAddressTest {
     public void testCase44() throws InterruptedException {
         mainScreenSidebarAddressClass.addAddressButtonClick();
         mainScreenSidebarAddAddressClass.chooseDevice();
-        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         mainScreenSidebarAddressClass.chooseDevice();
         mainScreenSidebarAddressClass.getEditAddressButton().get(0).click();
         mainScreenSidebarAddAddressClass.chooseDevice();
@@ -114,7 +115,7 @@ public class MainScreenSidebarAddressTest {
         mainScreenSidebarAddressClass.chooseDevice();
         mainScreenSidebarAddressClass.getEditAddressButton().get(0).click();
         if(mainScreenSidebarAddAddressClass.getCity().equals("EditCity")
-                && mainScreenSidebarAddAddressClass.getAddress().equals("EditStreet") && mainScreenSidebarAddAddressClass.getHome().equals("EditNumber")) {
+                && mainScreenSidebarAddAddressClass.getAddress().equals("EditStreet") && mainScreenSidebarAddAddressClass.getName().equals("EditNumber")) {
             Assert.assertTrue(true);
         } else {
             Assert.fail("Error!");
@@ -126,7 +127,7 @@ public class MainScreenSidebarAddressTest {
     public void testCase45() throws InterruptedException {
         mainScreenSidebarAddressClass.addAddressButtonClick();
         mainScreenSidebarAddAddressClass.chooseDevice();
-        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         mainScreenSidebarAddressClass.chooseDevice();
         mainScreenSidebarAddressClass.getEditAddressButton().get(0).click();
         mainScreenSidebarAddAddressClass.chooseDevice();
@@ -169,7 +170,7 @@ public class MainScreenSidebarAddressTest {
     public void testCase50() throws InterruptedException {
         mainScreenSidebarAddressClass.addAddressButtonClick();
         mainScreenSidebarAddAddressClass.chooseDevice();
-        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         mainScreenSidebarAddressClass.chooseDevice();
         //TODO
         /*if(mainScreenSidebarAddressClass.getRestaurantName().equals("TestRestaurant") && mainScreenSidebarAddressClass.getOrderName().equals("TestOrder") && mainScreenSidebarAddressClass.getDescription().equals("TestDescription2")) {
@@ -184,7 +185,7 @@ public class MainScreenSidebarAddressTest {
     public void testCase39() throws InterruptedException {
         mainScreenSidebarAddressClass.addAddressButtonClick();
         mainScreenSidebarAddAddressClass.chooseDevice();
-        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        mainScreenSidebarAddAddressClass.addAddress(GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         mainScreenSidebarAddressClass.chooseDevice();
         org.junit.Assert.assertTrue(mainScreenSidebarAddressClass.checkAddAddress(before));
     }
@@ -194,7 +195,7 @@ public class MainScreenSidebarAddressTest {
     public void testCase40() throws InterruptedException {
         mainScreenSidebarAddressClass.addAddressButtonClick();
         mainScreenSidebarAddAddressClass.chooseDevice();
-        boolean result = GlobalMethods.validationAddAddress(mainScreenSidebarAddAddressClass,GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getHome());
+        boolean result = GlobalMethods.validationAddAddress(mainScreenSidebarAddAddressClass,GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         org.junit.Assert.assertTrue(result);
     }
 

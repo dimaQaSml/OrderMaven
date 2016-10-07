@@ -39,7 +39,7 @@ public class MainScreenSidebarAddPaymentTest {
     public void before() throws InterruptedException, MalformedURLException {
         switch (GlobalMethods.chooseDevice()){
             case "web":
-                GlobalMethods.web();
+                driverBrowser = GlobalMethods.web();
                 break;
             case "ios":
                 GlobalMethods.ios(capabilities, driver);
@@ -48,11 +48,12 @@ public class MainScreenSidebarAddPaymentTest {
                 GlobalMethods.android(capabilities, driver);
                 break;
         }
-        if(driver != null) {
+        if(driverBrowser != null) {
             signInClass = PageFactory.initElements(driver, SignInClass.class);
             mainScreenSidebarPaymentsClass = PageFactory.initElements(driver, MainScreenSidebarPaymentsClass.class);
             mainScreenSidebarAddPaymentsClass = PageFactory.initElements(driver, MainScreenSidebarAddPaymentsClass.class);
             mainScreenClass = PageFactory.initElements(driver, MainScreenClass.class);
+
         } else {
             signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);
             mainScreenSidebarPaymentsClass = PageFactory.initElements(driverBrowser, MainScreenSidebarPaymentsClass.class);
@@ -63,7 +64,7 @@ public class MainScreenSidebarAddPaymentTest {
         }
 
         signInClass.chooseDevice();
-        signInClass.signInClick("+79280373736","123456");
+        signInClass.signInClick(GlobalMethods.getRealPhone(), GlobalMethods.getPassword());
         mainScreenClass.chooseDevice();
         mainScreenClass.getPaymentSection().click();
         mainScreenSidebarPaymentsClass.chooseDevice();
