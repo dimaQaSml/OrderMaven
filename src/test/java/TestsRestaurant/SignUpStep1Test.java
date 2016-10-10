@@ -1,6 +1,7 @@
 package TestsRestaurant;
 
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import TestClass.Restaurant.ForgotPasswordClass;
 import TestClass.Restaurant.SignInClass;
 import TestClass.Restaurant.SignUpClass.SignUpStep1Class;
@@ -68,9 +69,8 @@ public class SignUpStep1Test {
     }
 
     @After
-    public void after() throws InterruptedException {
-        Thread.sleep(1000);
-        driver.close();
+    public void after(){
+        driverBrowser.quit();
     }
 
 
@@ -79,14 +79,14 @@ public class SignUpStep1Test {
         signUpStep1Class.getName().sendKeys(name);
         signUpStep1Class.getPassword().sendKeys(password);
         signUpStep1Class.getConfirmPassword().sendKeys(confirmPassword);
-        boolean result = GlobalMethods.validationEmail(signUpStep1Class.getEmail(), signUpStep1Class.getSignUpButton());
+        boolean result = ValidationClass.validationEmail(signUpStep1Class.getEmail(), signUpStep1Class.getSignUpButton());
         Assert.assertTrue("Email validation not correct!",result);
     }
 
 
     @Test
     public void testCase10() throws InterruptedException {
-        boolean result = GlobalMethods.validationSignUpRestaurant(signUpStep1Class,name,email,password,confirmPassword,confirmPasswordNotEquals,passwordNotCorrect,confirmPasswordNotCorrect);
+        boolean result = ValidationClass.validationSignUpRestaurant(signUpStep1Class,name,email,password,confirmPassword,confirmPasswordNotEquals,passwordNotCorrect,confirmPasswordNotCorrect);
         Assert.assertTrue("Restaurant sign up validation not correct!",result);
     }
 

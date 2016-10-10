@@ -96,9 +96,8 @@ public class SummarySendTest {
 
     @After
     public void after(){
-        driver.close();
+        driverBrowser.quit();
     }
-
 
     @Test
     public void testCase136() throws InterruptedException {

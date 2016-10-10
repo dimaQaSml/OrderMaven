@@ -10,7 +10,9 @@ import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderCla
 import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarPaymentsClass;
 import TestClass.Client.SignInClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import junit.framework.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -27,7 +29,7 @@ import java.util.List;
  */
 public class MainScreenSidebarAddQuickOrderTest {
 
-    WebDriver driver;
+    WebDriver driverBrowser;
     SignInClass signInClass;
     List<WebElement> before;
     MainScreenClass mainScreenClass;
@@ -42,20 +44,20 @@ public class MainScreenSidebarAddQuickOrderTest {
 
     @Before
     public void before() throws InterruptedException {
-        driver = new FirefoxDriver();
-        signInClass = PageFactory.initElements(driver, SignInClass.class);
+        driverBrowser = new FirefoxDriver();
+        signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);
         before = new ArrayList<>();
-        mainScreenClass = PageFactory.initElements(driver, MainScreenClass.class);
-        mainScreenSidebarFavoriteOrderClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderClass.class);
-        mainScreenSidebarAddOrderClass = PageFactory.initElements(driver, MainScreenSidebarAddOrderClass.class);
-        mainScreenSidebarAddQuickOrderClass = PageFactory.initElements(driver, MainScreenSidebarAddQuickOrderClass.class);
-        mainScreenSidebarAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddressClass.class);
-        mainScreenSidebarAddAddressClass = PageFactory.initElements(driver, MainScreenSidebarAddAddressClass.class);
-        mainScreenSidebarPaymentsClass = PageFactory.initElements(driver, MainScreenSidebarPaymentsClass.class);
-        mainScreenSidebarAddPaymentsClass = PageFactory.initElements(driver, MainScreenSidebarAddPaymentsClass.class);
+        mainScreenClass = PageFactory.initElements(driverBrowser, MainScreenClass.class);
+        mainScreenSidebarFavoriteOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarFavoriteOrderClass.class);
+        mainScreenSidebarAddOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddOrderClass.class);
+        mainScreenSidebarAddQuickOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddQuickOrderClass.class);
+        mainScreenSidebarAddressClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddressClass.class);
+        mainScreenSidebarAddAddressClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddAddressClass.class);
+        mainScreenSidebarPaymentsClass = PageFactory.initElements(driverBrowser, MainScreenSidebarPaymentsClass.class);
+        mainScreenSidebarAddPaymentsClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddPaymentsClass.class);
 
-        driver.get(GlobalMethods.getUrl());
-        driver.manage().window().maximize();
+        driverBrowser.get(GlobalMethods.getUrl());
+        driverBrowser.manage().window().maximize();
         signInClass.chooseDevice();
         signInClass.signInClick(GlobalMethods.getRealPhone(), GlobalMethods.getPassword());
 
@@ -99,6 +101,11 @@ public class MainScreenSidebarAddQuickOrderTest {
         mainScreenSidebarFavoriteOrderClass.getAddQuickOrderButton().get(before.size()).click();
     }
 
+    @After
+    public void after(){
+        driverBrowser.quit();
+    }
+
     /*@Ignore
     @Test
     public void testCase28() throws InterruptedException {
@@ -111,7 +118,7 @@ public class MainScreenSidebarAddQuickOrderTest {
     @Ignore
     @Test
     public void testCase28() throws InterruptedException {
-        boolean result = GlobalMethods.validationFavoriteOrderList(mainScreenSidebarAddQuickOrderClass);
+        boolean result = ValidationClass.validationFavoriteOrderList(mainScreenSidebarAddQuickOrderClass);
         Assert.assertTrue("Error!", result);
     }
 
@@ -120,7 +127,7 @@ public class MainScreenSidebarAddQuickOrderTest {
     public void testCase60() throws InterruptedException {
         mainScreenSidebarAddQuickOrderClass.getPayment().sendKeys(GlobalMethods.getNumberCard1());
         mainScreenSidebarAddQuickOrderClass.getFavoriteOrder().sendKeys(GlobalMethods.getRestaurant());
-        boolean result = GlobalMethods.validationAddress(mainScreenSidebarAddQuickOrderClass.getAddress(),mainScreenSidebarAddQuickOrderClass.getSubmitButton());
+        boolean result = ValidationClass.validationAddress(mainScreenSidebarAddQuickOrderClass.getAddress(),mainScreenSidebarAddQuickOrderClass.getSubmitButton());
         Assert.assertTrue("Error!", result);
     }
 
@@ -129,14 +136,14 @@ public class MainScreenSidebarAddQuickOrderTest {
     public void testCase61() throws InterruptedException {
         mainScreenSidebarAddQuickOrderClass.getAddress().sendKeys(GlobalMethods.getCountry() + "," + GlobalMethods.getCity() + "," + GlobalMethods.getName());
         mainScreenSidebarAddQuickOrderClass.getFavoriteOrder().sendKeys(GlobalMethods.getRestaurant());
-        boolean result = GlobalMethods.validationPaymentList(mainScreenSidebarAddQuickOrderClass);
+        boolean result = ValidationClass.validationPaymentList(mainScreenSidebarAddQuickOrderClass);
         Assert.assertTrue("Error!", result);
     }
 
     @Ignore
     @Test
     public void testCase29() throws InterruptedException {
-        boolean result = GlobalMethods.validationQuickOrder(mainScreenSidebarAddQuickOrderClass,GlobalMethods.getRestaurant(),GlobalMethods.getOrder(),"testDescriptions");
+        boolean result = ValidationClass.validationQuickOrder(mainScreenSidebarAddQuickOrderClass,GlobalMethods.getRestaurant(),GlobalMethods.getOrder(),"testDescriptions");
         Assert.assertTrue("Error!", result);
     }
 

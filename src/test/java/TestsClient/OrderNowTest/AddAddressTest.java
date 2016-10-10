@@ -83,7 +83,7 @@ public class AddAddressTest{
 
     @After
     public void after(){
-        driver.close();
+        driverBrowser.quit();
     }
 
 

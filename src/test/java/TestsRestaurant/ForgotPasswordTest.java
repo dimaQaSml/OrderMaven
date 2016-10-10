@@ -1,6 +1,7 @@
 package TestsRestaurant;
 
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import TestClass.Restaurant.ForgotPasswordClass;
 import TestClass.Restaurant.SignInClass;
 import io.appium.java_client.AppiumDriver;
@@ -78,15 +79,14 @@ public class ForgotPasswordTest {
     }
 
     @After
-    public void after() throws InterruptedException {
-        Thread.sleep(1000);
-        driver.close();
+    public void after(){
+        driverBrowser.quit();
     }
 
 
     @Test
     public void testCase6() throws InterruptedException {
-        boolean result = GlobalMethods.validationEmail(forgotPasswordClass.getEmail(), forgotPasswordClass.getSubmitButton());
+        boolean result = ValidationClass.validationEmail(forgotPasswordClass.getEmail(), forgotPasswordClass.getSubmitButton());
         Assert.assertTrue("Email validation not correct!",result);
     }
 

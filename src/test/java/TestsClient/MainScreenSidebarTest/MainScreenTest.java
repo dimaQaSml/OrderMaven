@@ -10,10 +10,7 @@ import TestClass.GlobalMethods.GlobalMethods;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -75,10 +72,10 @@ public class MainScreenTest {
         mainScreenClass.chooseDevice();
     }
 
-    /*@After
+    @After
     public void after(){
-        driver.close();
-    }*/
+        driverBrowser.quit();
+    }
 
     @Ignore
     @Test

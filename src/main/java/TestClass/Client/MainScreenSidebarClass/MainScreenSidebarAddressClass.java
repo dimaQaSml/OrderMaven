@@ -71,9 +71,9 @@ public class MainScreenSidebarAddressClass {
 
     public List<WebElement> countAddressElementsBefore(){
         try{
-            if(!driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")).equals(null)) {
-                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")));
-                setAddressList(driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")));
+            if(!driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div")).isEmpty()) {
+                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div")));
+                setAddressList(driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div")));
             } else{
                 return new ArrayList<WebElement>();
             }
@@ -83,13 +83,16 @@ public class MainScreenSidebarAddressClass {
         return getAddressList();
     }
 
-    public boolean checkAddAddress(List<WebElement> countOrderElementsBefore){
+    public boolean checkAddAddress(List<WebElement> countOrderElementsBefore) throws InterruptedException {
+        Thread.sleep(1000);
         try{
-            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")));
-            setAddressList(driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div/div")));
+            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div")));
+            setAddressList(driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[3]/div")));
         } catch (org.openqa.selenium.TimeoutException e){
             return false;
         }
+        System.out.println("Count Address Before  " + countOrderElementsBefore.size());
+        System.out.println("Count Address After  " + getAddressList().size());
         if(countOrderElementsBefore.size()<getAddressList().size()) {
             return true;
         } else{

@@ -9,6 +9,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import junit.framework.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -75,10 +76,10 @@ public class MainScreenSidebarEditFavoriteOrderTest {
 
     }
 
-    /*@After
+    @After
     public void after(){
-        driver.close();
-    }*/
+        driverBrowser.quit();
+    }
 
     @Ignore
     @Test

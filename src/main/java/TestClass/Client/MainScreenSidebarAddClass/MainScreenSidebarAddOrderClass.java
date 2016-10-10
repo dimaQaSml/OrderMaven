@@ -4,12 +4,16 @@ import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderCla
 import TestClass.GlobalMethods.GlobalMethods;
 //TODO
 //import junit.framework.Assert;
+import TestClass.GlobalMethods.ValidationClass;
+import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 /**
  * Created by dmitry on 03.06.16.
@@ -31,7 +35,7 @@ public class MainScreenSidebarAddOrderClass {
 
     private WebElement restaurantSelectButton;
 
-    private WebElement restaurantList;
+    private List<WebElement> restaurantList;
 
     private WebElement orderName;
 
@@ -47,14 +51,13 @@ public class MainScreenSidebarAddOrderClass {
         waiting = new WebDriverWait(driver,20);
         switch (GlobalMethods.chooseDevice()) {
             case "web":
-                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='ModalContainer']/div/div/div[3]/div[1]/div[1]/div[1]/input")));
-                setRestaurantName(driver.findElement(By.xpath(pathWeb + "/div[1]/div[1]/div[1]/input")));
-                setRestaurantSelectButton(driver.findElement(By.xpath(pathWeb + "/div[1]/div[1]/div[2]")));
+                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='ModalContainer']/div/div/div[3]/div[1]/div[1]/input")));
+                setRestaurantName(driver.findElement(By.xpath(pathWeb + "/div[1]/div[1]/input")));
+                setRestaurantSelectButton(driver.findElement(By.xpath(pathWeb + "/div[1]/div[2]/p")));
                 setOrderName(driver.findElement(By.xpath(pathWeb + "/input")));
-                //setDescription(driver.findElement(By.xpath(pathWeb + "/textarea")));
                 setCancelButton(driver.findElement(By.xpath(pathWeb + "/div[3]/button[1]")));
                 setSubmitButton(driver.findElement(By.xpath(pathWeb + "/div[3]/button[2]")));
-                setModalWindow(driver.findElement(By.xpath(".//*[@id='ModalContainer']/div")));
+                //setModalWindow(driver.findElement(By.xpath(".//*[@id='ModalContainer']/div")));
                 break;
             case "ios":
                 waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
@@ -84,17 +87,29 @@ public class MainScreenSidebarAddOrderClass {
         getCancelButton().click();
     }
 
-    public boolean restaurantValidation() throws InterruptedException {
+    public boolean restaurantValidation(MainScreenSidebarAddOrderClass mainScreenSidebarAddOrderClass) throws InterruptedException {
         getOrderName().sendKeys("testOrder");
         //getDescription().sendKeys("testDescription");
-        boolean result = GlobalMethods.validationRestaurant(getRestaurantName(),getSubmitButton());
+        boolean result = ValidationClass.validationRestaurant(mainScreenSidebarAddOrderClass);
         return result;
     }
 
-    public void addOrder(String restaurant,String order){
-        getRestaurantName().sendKeys(restaurant);
-        getOrderName().sendKeys(order);
-        getSubmitButton().click();
+    public void addOrder(String restaurant,String order) throws InterruptedException {
+        //getRestaurantName().sendKeys(restaurant);
+        getOrderName().sendKeys(order + GlobalMethods.readFile());
+        try {
+            getRestaurantSelectButton().click();
+            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='ModalContainer']/div/div/div[3]/div[1]/div[3]/div[2]/div")));
+            setRestaurantList(driver.findElements(By.xpath(".//*[@id='ModalContainer']/div/div/div[3]/div[1]/div[3]/div[2]/div")));
+            getRestaurantList().get(0).click();
+        } catch (org.openqa.selenium.TimeoutException e){
+            Assert.fail("Не совпадает имя вводимого ресторана!");
+        }
+        if(getSubmitButton().isEnabled()) {
+            getSubmitButton().click();
+        } else{
+            Assert.fail("Не активна кнопка Submit!");
+        }
     }
 
     public void editOrder(String restaurant,String order){
@@ -180,11 +195,11 @@ public class MainScreenSidebarAddOrderClass {
         this.restaurantSelectButton = restaurantSelectButton;
     }
 
-    public WebElement getRestaurantList() {
+    public List<WebElement> getRestaurantList() {
         return restaurantList;
     }
 
-    public void setRestaurantList(WebElement restaurantList) {
+    public void setRestaurantList(List<WebElement> restaurantList) {
         this.restaurantList = restaurantList;
     }
 

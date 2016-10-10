@@ -4,12 +4,14 @@ import TestClass.Client.MainScreenSidebarAddClass.MainScreenSidebarAddOrderClass
 import TestClass.Client.MainScreenSidebarDeleteClass.MainScreenSidebarFavoriteOrderDeleteClass;
 import TestClass.GlobalMethods.GlobalMethods;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,14 +22,14 @@ public class MainScreenSidebarFavoriteOrderClass {
     WebDriver driver;
     WebDriverWait waiting;
 
-    MainScreenSidebarFavoriteOrderClass mainScreenSidebarFavoriteOrderClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderClass.class);
-    MainScreenSidebarFavoriteOrderDeleteClass mainScreenSidebarFavoriteOrderDeleteClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderDeleteClass.class);
+    //MainScreenSidebarFavoriteOrderClass mainScreenSidebarFavoriteOrderClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderClass.class);
+    //MainScreenSidebarFavoriteOrderDeleteClass mainScreenSidebarFavoriteOrderDeleteClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderDeleteClass.class);
 
     public MainScreenSidebarFavoriteOrderClass(WebDriver driver){
         this.driver = driver;
     }
 
-    String pathWeb = ".//*[@id='Container']/div[3]/div/div[3]";
+    String pathWeb = ".//*[@id='Container']/div[2]/div/div[3]";
     String pathAndroid = "";
     String pathIOS = "";
 
@@ -45,16 +47,16 @@ public class MainScreenSidebarFavoriteOrderClass {
 
     private WebElement categoriesOrderLabel;
 
-    private List<WebElement> orders;
+    private List<WebElement> orderList;
 
     //TODO ???? сделать addQuickOrderButton, editOrderButton, deleteOrderButton списками чтобы обращаться не только к первому
     public void chooseDevice() throws InterruptedException {
         waiting = new WebDriverWait(driver,10);
         switch (GlobalMethods.chooseDevice()) {
             case "web":
-                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[3]/div/div[3]/div[1]/div[1]/p")));
+                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[1]/div[1]/p")));
                 setFavoriteOrderSection(driver.findElement(By.xpath(pathWeb + "/div[1]/div[1]/p")));
-                setAddOrderButton(driver.findElement(By.xpath(pathWeb + "/div[3]/button")));
+                setAddOrderButton(driver.findElement(By.xpath(pathWeb + "/div[5]/button")));
                 break;
             case "ios":
                 waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
@@ -79,25 +81,32 @@ public class MainScreenSidebarFavoriteOrderClass {
 
     public List<WebElement> countOrdersElementsBefore(){
         try{
-            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[3]/div/div[3]/div[2]/div")));
-            setOrders(driver.findElements(By.xpath(".//*[@id='Container']/div[3]/div/div[3]/div[2]/div")));
+            if(!driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[2]/div")).isEmpty()) {
+                waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[2]/div")));
+                setOrderList(driver.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[2]/div")));
+            } else{
+                return new ArrayList<WebElement>();
+            }
         } catch (org.openqa.selenium.TimeoutException e){
             return null;
         }
-        return getOrders();
+        return getOrderList();
     }
 
-    public boolean checkAddOrder(List<WebElement> countOrderElementsBefore){
+    public boolean checkAddOrder(List<WebElement> countOrderElementsBefore) throws InterruptedException {
+        Thread.sleep(1000);
         try{
-            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[3]/div/div[3]/div[2]/div")));
-            setOrders(driver.findElements(By.xpath(pathWeb + "/div[2]/div")));
-            setAddQuickOrderButton(driver.findElements(By.xpath(pathWeb + "/div[2]/div/div[2]/img[1]")));
+            waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[2]/div")));
+            setOrderList(driver.findElements(By.xpath(pathWeb + "/div[2]/div")));
+            /*setAddQuickOrderButton(driver.findElements(By.xpath(pathWeb + "/div[2]/div/div[2]/img[1]")));
             setEditOrderButton(driver.findElements(By.xpath(pathWeb + "/div[2]/div/div[2]/img[2]")));
-            setDeleteOrderButton(driver.findElements(By.xpath(pathWeb + "/div[2]/div/div[2]/img[3]")));
-        } catch (org.openqa.selenium.TimeoutException e){
+            setDeleteOrderButton(driver.findElements(By.xpath(pathWeb + "/div[2]/div/div[2]/img[3]")));*/
+        } catch (TimeoutException e){
             return false;
         }
-        if(countOrderElementsBefore.size()<getOrders().size()) {
+        System.out.println("Count Order Before " + countOrderElementsBefore.size());
+        System.out.println("Count Order After " + getOrderList().size());
+        if(countOrderElementsBefore.size()<getOrderList().size()) {
             return true;
         } else{
             return false;
@@ -107,11 +116,11 @@ public class MainScreenSidebarFavoriteOrderClass {
     public boolean checkDeleteOrder(List<WebElement> countOrderElementsBefore){
         try{
             waiting.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='Container']/div[3]/div/div[3]/div[2]/div")));
-            setOrders(driver.findElements(By.xpath(".//*[@id='Container']/div[3]/div/div[3]/div[2]/div")));
+            setOrderList(driver.findElements(By.xpath(".//*[@id='Container']/div[3]/div/div[3]/div[2]/div")));
         } catch (org.openqa.selenium.TimeoutException e){
             return false;
         }
-        if(countOrderElementsBefore.size() > getOrders().size()) {
+        if(countOrderElementsBefore.size() > getOrderList().size()) {
             return true;
         } else{
             return false;
@@ -119,9 +128,9 @@ public class MainScreenSidebarFavoriteOrderClass {
     }
 
     public void deleteOrder(List<WebElement> before) throws InterruptedException {
-        mainScreenSidebarFavoriteOrderClass.getDeleteOrderButton().get(before.size()).click();
+        /*mainScreenSidebarFavoriteOrderClass.getDeleteOrderButton().get(before.size()).click();
         mainScreenSidebarFavoriteOrderDeleteClass.chooseDevice();
-        mainScreenSidebarFavoriteOrderDeleteClass.deleteYesClick();
+        mainScreenSidebarFavoriteOrderDeleteClass.deleteYesClick();*/
     }
 
     public boolean checkDataOrder(String nameOrder){
@@ -180,7 +189,6 @@ public class MainScreenSidebarFavoriteOrderClass {
         this.editOrderButton = editOrderButton;
     }
 
-
     public WebElement getCategoriesOrderLabel() {
         return categoriesOrderLabel;
     }
@@ -189,11 +197,11 @@ public class MainScreenSidebarFavoriteOrderClass {
         this.categoriesOrderLabel = categoriesOrderLabel;
     }
 
-    public List<WebElement> getOrders() {
-        return orders;
+    public List<WebElement> getOrderList() {
+        return orderList;
     }
 
-    public void setOrders(List<WebElement> orders) {
-        this.orders = orders;
+    public void setOrderList(List<WebElement> orderList) {
+        this.orderList = orderList;
     }
 }

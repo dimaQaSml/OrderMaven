@@ -5,6 +5,7 @@ import TestClass.Client.SignInClass;
 import TestClass.Client.SignUpClass;
 import TestClass.Client.VerificationCodeClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -74,7 +75,7 @@ public class VerificationCodeTest {
 
     @After
     public void after(){
-        driver.close();
+        driverBrowser.quit();
     }
 
     @Test
@@ -90,7 +91,7 @@ public class VerificationCodeTest {
     public void testCase18() throws InterruptedException {
         signUpClass.signUpClick(country,realPhone,password,confirmPassword);
         verificationCodeClass.chooseDevice();
-        boolean result = GlobalMethods.validationVerificationCode(verificationCodeClass.getVerificationCodeInput(),driver);
+        boolean result = ValidationClass.validationVerificationCode(verificationCodeClass.getVerificationCodeInput(),driver);
         Assert.assertTrue("Failed!",result);
     }
 
@@ -100,7 +101,7 @@ public class VerificationCodeTest {
         signUpClass.signUpClick(country,realPhone,password,confirmPassword);
         verificationCodeClass.chooseDevice();
         verificationCodeClass.resendButtonClick();
-        boolean result = GlobalMethods.checkResendVerificationCode(verificationCodeClass.getVerificationCodeInput(),driver);
+        boolean result = ValidationClass.checkResendVerificationCode(verificationCodeClass.getVerificationCodeInput(),driver);
         Assert.assertTrue("Failed!",result);
     }
 

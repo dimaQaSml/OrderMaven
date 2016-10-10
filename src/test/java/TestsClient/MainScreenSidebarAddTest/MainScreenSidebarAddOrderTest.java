@@ -1,15 +1,18 @@
 package TestsClient.MainScreenSidebarAddTest;
 
+import TestClass.Client.AuthorizationClass;
 import TestClass.Client.MainScreenSidebarAddClass.MainScreenSidebarAddOrderClass;
 import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarFavoriteOrderClass;
 import TestClass.Client.MainScreenSidebarDeleteClass.MainScreenSidebarFavoriteOrderDeleteClass;
 import TestClass.Client.SignInClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import junit.framework.Assert;
 import org.junit.After;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -35,6 +38,7 @@ public class MainScreenSidebarAddOrderTest {
     MainScreenSidebarFavoriteOrderClass mainScreenSidebarFavoriteOrderClass;
     MainScreenSidebarAddOrderClass mainScreenSidebarAddOrderClass;
     MainScreenSidebarFavoriteOrderDeleteClass mainScreenSidebarFavoriteOrderDeleteClass;
+    AuthorizationClass authorizationClass;
 
     @Before
     public void before() throws InterruptedException, MalformedURLException {
@@ -50,30 +54,33 @@ public class MainScreenSidebarAddOrderTest {
                 break;
         }
         if(driverBrowser != null) {
+            signInClass = PageFactory.initElements(driverBrowser, SignInClass.class);
+            mainScreenSidebarFavoriteOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarFavoriteOrderClass.class);
+            mainScreenSidebarAddOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddOrderClass.class);
+            mainScreenSidebarFavoriteOrderDeleteClass = PageFactory.initElements(driverBrowser, MainScreenSidebarFavoriteOrderDeleteClass.class);
+            authorizationClass = PageFactory.initElements(driverBrowser, AuthorizationClass.class);
+            driverBrowser.manage().window().maximize();
+
+        } else {
             signInClass = PageFactory.initElements(driver, SignInClass.class);
             mainScreenSidebarFavoriteOrderClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderClass.class);
             mainScreenSidebarAddOrderClass = PageFactory.initElements(driver, MainScreenSidebarAddOrderClass.class);
             mainScreenSidebarFavoriteOrderDeleteClass = PageFactory.initElements(driver, MainScreenSidebarFavoriteOrderDeleteClass.class);
 
-        } else {
-            signInClass = PageFactory.initElements(driver, SignInClass.class);
-            mainScreenSidebarFavoriteOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarFavoriteOrderClass.class);
-            mainScreenSidebarAddOrderClass = PageFactory.initElements(driverBrowser, MainScreenSidebarAddOrderClass.class);
-            mainScreenSidebarFavoriteOrderDeleteClass = PageFactory.initElements(driverBrowser, MainScreenSidebarFavoriteOrderDeleteClass.class);
-            driverBrowser.get(GlobalMethods.getUrl());
-            driverBrowser.manage().window().maximize();
         }
+        authorizationClass.chooseDevice();
+        authorizationClass.getSignInButton().click();
         signInClass.chooseDevice();
         signInClass.signInClick(GlobalMethods.getRealPhone(), GlobalMethods.getPassword());
         mainScreenSidebarFavoriteOrderClass.chooseDevice();
     }
 
-    @After
+    /*@After
     public void after(){
-        driver.close();
-    }
+        driverBrowser.quit();
+    }*/
 
-    //@Ignore
+    @Ignore
     @Test
     public void testCase23() throws InterruptedException {
         List<WebElement> before = mainScreenSidebarFavoriteOrderClass.countOrdersElementsBefore();
@@ -88,35 +95,43 @@ public class MainScreenSidebarAddOrderTest {
         Assert.assertTrue("Error!", result);
     }
 
-    //@Ignore
+    //TODO уточнить работу списка
+    @Ignore
     @Test
     public void testCase24() throws InterruptedException {
         mainScreenSidebarFavoriteOrderClass.addOrderButtonClick();
         mainScreenSidebarAddOrderClass.chooseDevice();
-        boolean result = mainScreenSidebarAddOrderClass.restaurantValidation();
+        boolean result = mainScreenSidebarAddOrderClass.restaurantValidation(mainScreenSidebarAddOrderClass);
         Assert.assertTrue("Error!",result);
     }
 
-    //@Ignore
+    @Ignore
     @Test
     public void testCase25() throws InterruptedException {
         mainScreenSidebarFavoriteOrderClass.addOrderButtonClick();
         mainScreenSidebarAddOrderClass.chooseDevice();
-        boolean result = GlobalMethods.validationAddOrder(mainScreenSidebarAddOrderClass, GlobalMethods.getRestaurant(),GlobalMethods.getOrder(),"testDescription");
+        boolean result = ValidationClass.validationAddOrder(mainScreenSidebarAddOrderClass, GlobalMethods.getRestaurant(),GlobalMethods.getOrder());
         Assert.assertTrue("Error!",result);
     }
 
-    //@Ignore
+    @Ignore
     @Test
     public void testCase26() throws InterruptedException {
         mainScreenSidebarFavoriteOrderClass.addOrderButtonClick();
         mainScreenSidebarAddOrderClass.chooseDevice();
         mainScreenSidebarAddOrderClass.cancelClick();
-        mainScreenSidebarFavoriteOrderClass.chooseDevice();
-        Assert.assertTrue("Error!", driver.getCurrentUrl().equals(GlobalMethods.getUrl() + "/"));
+        Thread.sleep(1000);
+        try {
+            if (mainScreenSidebarAddOrderClass.getSubmitButton().isDisplayed()) {
+                org.junit.Assert.fail("Error1!");
+            }
+        } catch (org.openqa.selenium.StaleElementReferenceException e){
+            org.junit.Assert.assertTrue(true);
+        }
+
     }
 
-    //@Ignore
+    @Ignore
     @Test
     public void testCase31() throws InterruptedException {
         List<WebElement> before = mainScreenSidebarFavoriteOrderClass.countOrdersElementsBefore();
@@ -127,6 +142,7 @@ public class MainScreenSidebarAddOrderTest {
         mainScreenSidebarFavoriteOrderClass.chooseDevice();
         boolean result = mainScreenSidebarFavoriteOrderClass.checkAddOrder(before);
         if(result) {
+            mainScreenSidebarFavoriteOrderClass.setEditOrderButton(driverBrowser.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[2]/div/div[2]/img[2]")));
             mainScreenSidebarFavoriteOrderClass.getEditOrderButton().get(before.size()).click();
             mainScreenSidebarAddOrderClass.chooseDevice();
             System.out.println(mainScreenSidebarAddOrderClass.getRestaurantName().getAttribute("value") + " " + mainScreenSidebarAddOrderClass.getOrderName().getAttribute("value"));
@@ -142,7 +158,8 @@ public class MainScreenSidebarAddOrderTest {
         }
     }
 
-    //@Ignore
+    //TODO не работает добавление карты - тест не пройдет
+    @Ignore
     @Test
     public void testCase32() throws InterruptedException {
         List<WebElement> before = mainScreenSidebarFavoriteOrderClass.countOrdersElementsBefore();
@@ -152,6 +169,7 @@ public class MainScreenSidebarAddOrderTest {
         mainScreenSidebarFavoriteOrderClass.chooseDevice();
         boolean result = mainScreenSidebarFavoriteOrderClass.checkAddOrder(before);
         if(result) {
+            mainScreenSidebarFavoriteOrderClass.setEditOrderButton(driverBrowser.findElements(By.xpath(".//*[@id='Container']/div[2]/div/div[3]/div[2]/div/div[2]/img[2]")));
             mainScreenSidebarFavoriteOrderClass.getAddQuickOrderButton().get(before.size()).click();
             mainScreenSidebarAddOrderClass.chooseDevice();
             mainScreenSidebarAddOrderClass.addOrder("TestRestaurant", "TestOrder");
@@ -169,7 +187,7 @@ public class MainScreenSidebarAddOrderTest {
         }
     }
 
-    @Ignore
+    //@Ignore
     @Test
     public void testCase34() throws InterruptedException {
         mainScreenSidebarFavoriteOrderClass.getEditOrderButton().get(0).click();

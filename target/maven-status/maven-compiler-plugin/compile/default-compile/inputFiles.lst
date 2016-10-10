@@ -30,6 +30,7 @@
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/AuthorizationClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/ForgotPasswordClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Restaurant/MobileCategories/SignUpStep2CategoriesClass.java
+/Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/GlobalMethods/ValidationClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/OrderNowClass/DeliveriesReceivedClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/Restaurant/RestaurantScreenClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/Restaurant/Rate_ReviewClass.java
@@ -44,7 +45,6 @@
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/MainScreenSidebarClass/MainScreenSidebarFavoriteOrderClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Restaurant/SignUpClass/SignUpStep2Class.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/OrderNowClass/CongratulationsClass.java
-/Users/dmitry/IdeaProjects/OrderMaven/src/main/java/OrderProjectClass/MainClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/MainScreenSidebarDeleteClass/MainScreenSidebarAddressDeleteClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/Restaurant/RestaurantSearchClass.java
 /Users/dmitry/IdeaProjects/OrderMaven/src/main/java/TestClass/Client/OrderNowClass/DeliveriesClass.java

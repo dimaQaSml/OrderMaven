@@ -1,6 +1,7 @@
 package TestClass.Client.MainScreenSidebarAddClass;
 
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -154,7 +155,7 @@ public class MainScreenSidebarAddQuickOrderClass {
     }
 
     public boolean restaurantValidation(MainScreenSidebarAddQuickOrderClass mainScreenSidebarAddQuickOrderClass) throws InterruptedException {
-        boolean result = GlobalMethods.validationFavoriteOrder(mainScreenSidebarAddQuickOrderClass);
+        boolean result = ValidationClass.validationFavoriteOrder(mainScreenSidebarAddQuickOrderClass);
         return result;
     }
 

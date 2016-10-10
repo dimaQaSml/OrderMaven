@@ -6,6 +6,7 @@ import TestClass.Client.SignInClass;
 import TestClass.Client.SignUpClass;
 import TestClass.Client.VerificationCodeClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -86,9 +87,8 @@ public class SignUpTest {
 
     @After
     public void after(){
-        driver.close();
+        driverBrowser.quit();
     }
-
     @Test
     public void testCase1() throws InterruptedException {
         signUpClass.getCountrySelectButton().click();
@@ -99,7 +99,7 @@ public class SignUpTest {
 
     @Test
     public void testCase2() throws InterruptedException {
-        boolean result = GlobalMethods.validationCountry(signUpClass.getCountryField(),signUpClass.getCountryList());
+        boolean result = ValidationClass.validationCountry(signUpClass.getCountryField(),signUpClass.getCountryList());
         Assert.assertTrue("Validation country not correct!",result);
     }
 
@@ -109,14 +109,14 @@ public class SignUpTest {
         signUpClass.getCountryField().sendKeys("Russia");
         signUpClass.getPassword().sendKeys(password);
         signUpClass.getConfirmPassword().sendKeys(confirmPassword);
-        boolean result = GlobalMethods.validationPhone(signUpClass.getPhone(),signUpClass.getSignUpButton());
+        boolean result = ValidationClass.validationPhone(signUpClass.getPhone(),signUpClass.getSignUpButton());
         Assert.assertTrue("Error!",result);
     }
 
 
     @Test
     public void testCase4() throws InterruptedException {
-        boolean result = GlobalMethods.validationSignUpClient(signUpClass,country,phone,password,confirmPassword,confirmPasswordNotEquals,passwordNotCorrect,confirmPasswordNotCorrect);
+        boolean result = ValidationClass.validationSignUpClient(signUpClass,country,phone,password,confirmPassword,confirmPasswordNotEquals,passwordNotCorrect,confirmPasswordNotCorrect);
         Assert.assertTrue("Phone validation not correct!",result);
     }
 

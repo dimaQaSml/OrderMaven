@@ -1,6 +1,7 @@
 package TestsRestaurant;
 
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import TestClass.Restaurant.ForgotPasswordClass;
 import TestClass.Restaurant.SignInClass;
 import TestClass.Restaurant.SignUpClass.SignUpStep1Class;
@@ -65,13 +66,8 @@ public class SignInTest {
     }
 
     @After
-    public void after() throws InterruptedException {
-        Thread.sleep(1000);
-        if(driver != null) {
-            driver.quit();
-        } else {
-            driverBrowser.close();
-        }
+    public void after(){
+        driverBrowser.quit();
     }
 
     @Test
@@ -84,7 +80,7 @@ public class SignInTest {
     @Test
     public void testCase5() throws InterruptedException {
         signInClass.getPassword().sendKeys("111111");
-        boolean result = GlobalMethods.validationEmail(signInClass.getEmail(),signInClass.getSignInButton());
+        boolean result = ValidationClass.validationEmail(signInClass.getEmail(),signInClass.getSignInButton());
         Assert.assertEquals("Email validation not correct!",result,true);
     }
 

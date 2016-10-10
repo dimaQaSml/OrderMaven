@@ -92,9 +92,8 @@ public class PaymentMethodTest {
 
     @After
     public void after(){
-        driver.close();
+        driverBrowser.quit();
     }
-
 
     @Test
     public void testCase131() throws InterruptedException {

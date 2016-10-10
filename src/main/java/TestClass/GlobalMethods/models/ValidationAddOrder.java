@@ -9,12 +9,10 @@ public class ValidationAddOrder {
     public Boolean key;
     public String restaurant;
     public String order;
-    public String description;
 
-    public ValidationAddOrder(Boolean key,String restaurant, String order, String description){
+    public ValidationAddOrder(Boolean key,String restaurant, String order){
         this.key = key;
         this.restaurant = restaurant;
         this.order = order;
-        this.description = description;
     }
 }

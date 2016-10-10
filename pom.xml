@@ -28,9 +28,8 @@
                 <configuration>
                     <includes>
                         <include>TestClass.java</include>
-                        <include>TestClass2.java</include>
                     </includes>
-                    <parallel>classes</parallel>
+                    <parallel>all</parallel>
                     <threadCount>2</threadCount>
                 </configuration>
             </plugin>

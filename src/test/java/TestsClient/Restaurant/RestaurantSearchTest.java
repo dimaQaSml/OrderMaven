@@ -7,6 +7,7 @@ import TestClass.Client.Restaurant.RestaurantScreenClass;
 import TestClass.Client.Restaurant.RestaurantSearchClass;
 import TestClass.Client.SignInClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -52,7 +53,7 @@ public class RestaurantSearchTest {
 
     @Test
     public void testCase85() throws InterruptedException {
-        boolean result = GlobalMethods.validationSearchRestaurant(restaurantSearchClass, restaurantScreenClass);
+        boolean result = ValidationClass.validationSearchRestaurant(restaurantSearchClass, restaurantScreenClass);
         org.junit.Assert.assertTrue(result);
     }
 

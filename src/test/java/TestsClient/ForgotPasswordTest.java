@@ -6,6 +6,7 @@ import TestClass.Client.SignInClass;
 import TestClass.Client.SignUpClass;
 import TestClass.Client.VerificationCodeClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
@@ -75,9 +76,8 @@ public class ForgotPasswordTest {
 
     @After
     public void after(){
-        driver.close();
+        driverBrowser.quit();
     }
-
 
     @Test
     public void testCase9() throws InterruptedException {
@@ -90,7 +90,7 @@ public class ForgotPasswordTest {
     @Test
     public void testCase10() throws InterruptedException {
         forgotPasswordClass.getCountryField().sendKeys(country);
-        boolean result = GlobalMethods.validationPhone(forgotPasswordClass.getPhone(),forgotPasswordClass.getSubmitButton());
+        boolean result = ValidationClass.validationPhone(forgotPasswordClass.getPhone(),forgotPasswordClass.getSubmitButton());
         Assert.assertTrue("Validation phone failed!",result);
     }
 

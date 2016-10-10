@@ -1,6 +1,7 @@
 package TestsRestaurant;
 
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import TestClass.Restaurant.ForgotPasswordClass;
 import TestClass.Restaurant.SignInClass;
 import TestClass.Restaurant.SignUpClass.SignUpStep1Class;
@@ -71,9 +72,8 @@ public class SignUpStep2Test {
     }
 
     @After
-    public void after() throws InterruptedException {
-        Thread.sleep(1000);
-        driver.close();
+    public void after(){
+        driverBrowser.quit();
     }
 
 
@@ -131,7 +131,7 @@ public class SignUpStep2Test {
 
     @Test
     public void testCase23() throws InterruptedException {
-        boolean result = GlobalMethods.validationSignUpRestaurantStep2(signUpStep2Class,"wert.jpeg","qwer","sdf.jpg","bnm.jpg");
+        boolean result = ValidationClass.validationSignUpRestaurantStep2(signUpStep2Class,"wert.jpeg","qwer","sdf.jpg","bnm.jpg");
         Assert.assertTrue("Error!", result);
     }
 
@@ -148,7 +148,7 @@ public class SignUpStep2Test {
 
     @Test
     public void testCase67() throws InterruptedException {
-        boolean result = GlobalMethods.validationSignUpRestaurantStep2(signUpStep2Class,"wert.jpeg","qwer","sdf.jpg","bnm.jpg");
+        boolean result = ValidationClass.validationSignUpRestaurantStep2(signUpStep2Class,"wert.jpeg","qwer","sdf.jpg","bnm.jpg");
         Assert.assertTrue("Error!", result);
     }
 

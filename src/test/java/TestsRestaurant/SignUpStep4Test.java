@@ -89,9 +89,8 @@ public class SignUpStep4Test {
     }
 
     @After
-    public void after() throws InterruptedException {
-        Thread.sleep(1000);
-        driver.close();
+    public void after(){
+        driverBrowser.quit();
     }
 
     @Test

@@ -7,10 +7,12 @@ import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
 import TestClass.Client.MainScreenSidebarDeleteClass.MainScreenSidebarAddressDeleteClass;
 import TestClass.Client.SignInClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import junit.framework.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -80,10 +82,10 @@ public class MainScreenSidebarAddressTest {
         before = mainScreenSidebarAddressClass.countAddressElementsBefore();
     }
 
-    /*@After
+    @After
     public void after(){
-        driver.close();
-    }*/
+        driverBrowser.quit();
+    }
 
 
     @Ignore
@@ -195,7 +197,7 @@ public class MainScreenSidebarAddressTest {
     public void testCase40() throws InterruptedException {
         mainScreenSidebarAddressClass.addAddressButtonClick();
         mainScreenSidebarAddAddressClass.chooseDevice();
-        boolean result = GlobalMethods.validationAddAddress(mainScreenSidebarAddAddressClass,GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
+        boolean result = ValidationClass.validationAddAddress(mainScreenSidebarAddAddressClass,GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         org.junit.Assert.assertTrue(result);
     }
 

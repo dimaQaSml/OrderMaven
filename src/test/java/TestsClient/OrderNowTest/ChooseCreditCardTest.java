@@ -93,9 +93,8 @@ public class ChooseCreditCardTest {
 
     @After
     public void after(){
-        driver.close();
+        driverBrowser.quit();
     }
-
 
     @Test
     public void testCase145() throws InterruptedException {

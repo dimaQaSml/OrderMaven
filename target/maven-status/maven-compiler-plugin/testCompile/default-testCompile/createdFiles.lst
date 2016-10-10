@@ -20,7 +20,6 @@ TestsClient/MainScreenSidebarEditTest/MainScreenSidebarEditFavoriteOrderTest.cla
 TestsClient/MainScreenSidebarDeleteTest/MainScreenSidebarFavoriteOrderDeleteTest.class
 TestsClient/OrderNowTest/SummarySendTest.class
 TestClass.class
-TestClass2.class
 TestsClient/MainScreenSidebarTest/MainScreenSidebarFavoriteOrderTest.class
 TestsClient/MainScreenSidebarTest/MainScreenTest.class
 TestsClient/OrderNowTest/AddAddressTest.class

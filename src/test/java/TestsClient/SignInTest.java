@@ -69,9 +69,8 @@ public class SignInTest {
 
     @After
     public void after(){
-        driver.close();
+        driverBrowser.quit();
     }
-
 
     @Test
     public void testCase5() {

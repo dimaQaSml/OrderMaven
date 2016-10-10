@@ -7,14 +7,12 @@ import TestClass.Client.MainScreenSidebarClass.MainScreenClass;
 import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarAddressClass;
 import TestClass.Client.SignInClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import junit.framework.Assert;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -93,11 +91,12 @@ public class MainScreenSidebarAddAddressTest {
         Assert.assertTrue("Error!", result);
     }
 
-
+    //@Ignore
     @Test
     public void testCase40() throws InterruptedException {
         mainScreenSidebarAddressClass.addAddressButtonClick();
-        boolean result = GlobalMethods.validationAddAddress(mainScreenSidebarAddAddressClass, GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
+        mainScreenSidebarAddAddressClass.chooseDevice();
+        boolean result = ValidationClass.validationAddAddress(mainScreenSidebarAddAddressClass, GlobalMethods.getCity(), GlobalMethods.getAddress(), GlobalMethods.getName());
         Assert.assertTrue("Error!", result);
     }
 
@@ -107,11 +106,11 @@ public class MainScreenSidebarAddAddressTest {
         mainScreenSidebarAddressClass.addAddressButtonClick();
         mainScreenSidebarAddAddressClass.chooseDevice();
         mainScreenSidebarAddAddressClass.cancelClick();
-        /*try {
+        try {
             mainScreenSidebarAddressClass.chooseDevice();
-        } catch(){
+        } catch(org.openqa.selenium.TimeoutException e){
             Assert.fail("Error!");
-        }*/
+        }
         Assert.assertTrue(true);
     }
 
@@ -122,6 +121,6 @@ public class MainScreenSidebarAddAddressTest {
         mainScreenSidebarAddAddressClass.chooseDevice();
         mainScreenSidebarAddAddressClass.getGetLocationButton().click();
         boolean result = mainScreenSidebarAddAddressClass.getLocation();
-        Assert.assertTrue("Error!", result);
+        Assert.assertTrue("Кнопка GetLocation не работает!", result);
     }
 }

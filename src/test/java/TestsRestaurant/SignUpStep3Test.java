@@ -1,6 +1,7 @@
 package TestsRestaurant;
 
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import TestClass.Restaurant.SignInClass;
 import TestClass.Restaurant.SignUpClass.SignUpStep1Class;
 import TestClass.Restaurant.SignUpClass.SignUpStep2Class;
@@ -86,19 +87,19 @@ public class SignUpStep3Test {
     }
 
     @After
-    public void after() throws InterruptedException {
-        driver.close();
+    public void after(){
+        driverBrowser.quit();
     }
 
     @Test
     public void testCase25() throws InterruptedException {
-        boolean result = GlobalMethods.ValidationSignUpRestaurantStep3(driver,signUpStep3Class,address,city,state,country,zipCode);
+        boolean result = ValidationClass.ValidationSignUpRestaurantStep3(driver,signUpStep3Class,address,city,state,country,zipCode);
         Assert.assertTrue("Error!",result);
     }
 
     @Test
     public void testCase26() throws InterruptedException {
-         boolean result = GlobalMethods.validationCountry(signUpStep3Class.getCountry(),signUpStep3Class.getCountrySelect());
+         boolean result = ValidationClass.validationCountry(signUpStep3Class.getCountry(),signUpStep3Class.getCountrySelect());
         Assert.assertTrue("Error!",result);
     }
 

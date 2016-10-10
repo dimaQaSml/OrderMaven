@@ -5,10 +5,12 @@ import TestClass.Client.MainScreenSidebarClass.MainScreenClass;
 import TestClass.Client.MainScreenSidebarClass.MainScreenSidebarPaymentsClass;
 import TestClass.Client.SignInClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import junit.framework.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -70,10 +72,10 @@ public class MainScreenSidebarAddPaymentTest {
         mainScreenSidebarPaymentsClass.chooseDevice();
     }
 
-    /*@After
+    @After
     public void after(){
-        driver.close();
-    }*/
+        driverBrowser.quit();
+    }
 
     public void addPayment() throws InterruptedException {
         mainScreenSidebarPaymentsClass.addPaymentButtonClick();
@@ -96,7 +98,7 @@ public class MainScreenSidebarAddPaymentTest {
     public void testCase52() throws InterruptedException {
         mainScreenSidebarPaymentsClass.addPaymentButtonClick();
         mainScreenSidebarAddPaymentsClass.chooseDevice();
-        boolean result = GlobalMethods.validationPayment(mainScreenSidebarAddPaymentsClass,GlobalMethods.getNumberCard1(), GlobalMethods.getNumberCard2(),GlobalMethods.getDateCardMonth(), GlobalMethods.getDateCardYear(),GlobalMethods.getCvvCard());
+        boolean result = ValidationClass.validationPayment(mainScreenSidebarAddPaymentsClass,GlobalMethods.getNumberCard1(), GlobalMethods.getNumberCard2(),GlobalMethods.getDateCardMonth(), GlobalMethods.getDateCardYear(),GlobalMethods.getCvvCard());
         /*if(result == true){
             result = GlobalMethods.validationPayment(mainScreenSidebarAddPaymentsClass,true,GlobalMethods.getNameCard(),GlobalMethods.getNumberCard1(),GlobalMethods.getDateCard(),GlobalMethods.getCvvCard());
         }*/

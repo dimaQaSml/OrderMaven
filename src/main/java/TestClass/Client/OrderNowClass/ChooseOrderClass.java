@@ -2,6 +2,7 @@ package TestClass.Client.OrderNowClass;
 
 import TestClass.Client.Restaurant.RestaurantModalClass;
 import TestClass.GlobalMethods.GlobalMethods;
+import TestClass.GlobalMethods.ValidationClass;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -84,12 +85,12 @@ public class ChooseOrderClass {
     }
 
     public boolean testCase117() throws InterruptedException {
-        boolean result = GlobalMethods.validationChooseOrder(this,GlobalMethods.getOrder(), GlobalMethods.getOrderEdit());
+        boolean result = ValidationClass.validationChooseOrder(this,GlobalMethods.getOrder(), GlobalMethods.getOrderEdit());
         return result;
     }
 
     public boolean testCase118() throws InterruptedException {
-        boolean result = GlobalMethods.validationChooseOrderFavoriteOrder(this);
+        boolean result = ValidationClass.validationChooseOrderFavoriteOrder(this);
         return result;
     }
 

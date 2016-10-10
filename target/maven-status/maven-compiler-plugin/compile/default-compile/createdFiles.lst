@@ -16,6 +16,7 @@ TestClass/GlobalMethods/models/ValidationPayment.class
 TestClass/Client/MainScreenSidebarClass/MainScreenSidebarPaymentsClass.class
 TestClass/Client/MainScreenSidebarDeleteClass/MainScreenSidebarFavoriteOrderDeleteClass.class
 TestClass/Client/MainScreenSidebarClass/MainScreenClass.class
+TestClass/GlobalMethods/ValidationClass.class
 TestClass/GlobalMethods/models/ValidationAddOrder.class
 TestClass/GlobalMethods/models/ValidationValueSignUpRestaurant.class
 TestClass/Client/ForgotPasswordClass.class
@@ -31,7 +32,6 @@ TestClass/Restaurant/MobileCategories/SignUpStep2CategoriesClass.class
 TestClass/GlobalMethods/models/ValidationSignUpRestaurantStep2.class
 TestClass/Restaurant/SignUpClass/SignUpStep4Class.class
 TestClass/Restaurant/SignInClass.class
-OrderProjectClass/MainClass.class
 TestClass/GlobalMethods/models/ValidationAddAddress.class
 TestClass/Restaurant/MobileCategories/SignUpStep2AddMenuPhotosClass.class
 TestClass/Client/Restaurant/RestaurantQuickOrderClass.class
